@@ -1,1 +1,981 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrendaSHOP — Tissus, Ongles & Cils · Lomé, Togo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush:    #F2C4CE;
+  --rose:     #E8839A;
+  --hot:      #C8294F;
+  --wine:     #6B1535;
+  --deep:     #1E0A14;
+  --gold:     #C9963C;
+  --champagne:#F5DEB3;
+  --cream:    #FDF8F5;
+  --white:    #FFFFFF;
+  --soft:     #FAF0F3;
+  --charcoal: #2D2028;
+  --muted:    #8A6A75;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);color:var(--charcoal);
+  overflow-x:hidden;cursor:none;
+}
+
+/* CURSOR */
+#cur{width:13px;height:13px;background:var(--hot);border-radius:50%;
+  position:fixed;pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);mix-blend-mode:multiply;
+  transition:width .2s,height .2s,background .2s;}
+#cur-ring{width:40px;height:40px;border:1.5px solid var(--rose);
+  border-radius:50%;position:fixed;pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:all .3s cubic-bezier(.25,.46,.45,.94);}
+body:has(a:hover) #cur,body:has(button:hover) #cur{width:7px;height:7px;background:var(--gold);}
+body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:54px;height:54px;border-color:var(--gold);}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  opacity:.022;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 5rem;transition:all .4s;}
+nav.stuck{background:rgba(253,248,245,.95);backdrop-filter:blur(18px);
+  padding:1rem 5rem;border-bottom:1px solid rgba(200,41,79,.1);}
+.logo{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;
+  color:var(--deep);text-decoration:none;letter-spacing:.01em;}
+.logo span{color:var(--hot);font-style:italic;}
+.logo sub{font-size:.7rem;font-family:'DM Sans',sans-serif;font-weight:300;
+  color:var(--muted);letter-spacing:.08em;vertical-align:middle;margin-left:.3rem;}
+.nav-menu{display:flex;gap:2.2rem;list-style:none;}
+.nav-menu a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;position:relative;padding-bottom:3px;
+  transition:color .25s;}
+.nav-menu a::after{content:'';position:absolute;bottom:0;left:0;
+  width:0;height:1.5px;background:var(--hot);transition:width .3s;}
+.nav-menu a:hover{color:var(--hot);}
+.nav-menu a:hover::after{width:100%;}
+.nav-end{display:flex;gap:.9rem;align-items:center;}
+.nav-cart{position:relative;background:none;border:none;font-size:1.3rem;
+  cursor:none;color:var(--charcoal);transition:transform .2s;}
+.nav-cart:hover{transform:scale(1.1);}
+.cart-dot{position:absolute;top:-4px;right:-4px;width:17px;height:17px;
+  border-radius:50%;background:var(--hot);color:white;font-size:.55rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;}
+.nav-cta{background:var(--hot);color:white;border:none;
+  padding:.65rem 1.5rem;border-radius:50px;
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  cursor:none;font-family:'DM Sans',sans-serif;font-weight:500;
+  transition:background .3s,transform .2s;}
+.nav-cta:hover{background:var(--wine);transform:scale(1.03);}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:grid;
+  grid-template-columns:1fr 1fr;align-items:center;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,
+    rgba(30,10,20,.92) 0%,
+    rgba(30,10,20,.75) 45%,
+    rgba(30,10,20,.2) 100%);}
+.hero-left{padding:9rem 3rem 6rem 7rem;position:relative;z-index:2;}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.2);padding:.4rem 1rem;border-radius:50px;
+  font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--champagne);margin-bottom:2rem;
+  opacity:0;animation:slideUp .8s .1s forwards;}
+.hero-badge::before{content:'✦';color:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5.5vw,6rem);line-height:1.04;font-weight:900;
+  color:white;margin-bottom:1.6rem;
+  opacity:0;animation:slideUp .9s .25s forwards;}
+.hero h1 em{font-style:italic;color:var(--blush);font-weight:400;}
+.hero h1 .outline{-webkit-text-stroke:2px rgba(255,255,255,.45);color:transparent;}
+.hero-sub{font-size:1rem;line-height:1.75;color:rgba(255,255,255,.65);
+  font-weight:300;max-width:420px;margin-bottom:2.6rem;
+  opacity:0;animation:slideUp .9s .4s forwards;}
+.hero-location{display:flex;align-items:center;gap:.5rem;
+  font-size:.78rem;color:var(--gold);margin-bottom:1.4rem;letter-spacing:.06em;
+  opacity:0;animation:slideUp .7s .3s forwards;}
+.hero-btns{display:flex;gap:1.2rem;flex-wrap:wrap;
+  opacity:0;animation:slideUp .9s .55s forwards;}
+.btn-primary{display:inline-block;text-decoration:none;
+  background:var(--hot);color:white;padding:1rem 2.4rem;border-radius:50px;
+  font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+  cursor:none;transition:all .3s;
+  box-shadow:0 8px 32px rgba(200,41,79,.4);}
+.btn-primary:hover{background:var(--gold);color:var(--deep);
+  transform:translateY(-2px);box-shadow:0 16px 40px rgba(201,150,60,.4);}
+.btn-outline{display:inline-block;text-decoration:none;
+  border:1.5px solid rgba(255,255,255,.4);color:white;
+  padding:1rem 2.4rem;border-radius:50px;font-size:.82rem;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:400;
+  cursor:none;transition:all .3s;background:rgba(255,255,255,.07);
+  backdrop-filter:blur(6px);}
+.btn-outline:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.7);}
+.hero-stats{display:flex;gap:2rem;margin-top:3.2rem;padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,.12);
+  opacity:0;animation:slideUp .9s .7s forwards;}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;
+  color:var(--champagne);line-height:1;}
+.stat-l{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);margin-top:.3rem;}
+
+/* Hero right – product mosaic */
+.hero-right{position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  height:100vh;padding-right:5rem;}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;gap:10px;width:320px;height:480px;}
+.mos-img{border-radius:14px;overflow:hidden;position:relative;}
+.mos-img img{width:100%;height:100%;object-fit:cover;
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94);}
+.mos-img:hover img{transform:scale(1.06);}
+.mos-img::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(30,10,20,.45),transparent 50%);
+  pointer-events:none;}
+.m1{grid-column:1;grid-row:1/3;} /* tall */
+.m2{grid-column:2;grid-row:1;}
+.m3{grid-column:2;grid-row:2;}
+.m4{grid-column:1/3;grid-row:3;} /* wide */
+.mos-label{position:absolute;bottom:.6rem;left:.7rem;z-index:2;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);font-weight:500;}
+
+/* MARQUEE */
+.marquee{background:var(--hot);overflow:hidden;padding:.85rem 0;display:flex;}
+.mtrack{display:flex;gap:2.5rem;white-space:nowrap;animation:marquee 22s linear infinite;}
+.mtrack span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);font-weight:400;flex-shrink:0;}
+.mtrack .gem{color:var(--champagne);font-size:.55rem;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* TRUST */
+.trust{background:white;padding:2.2rem 5rem;
+  display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:1.5rem;
+  border-top:1px solid rgba(200,41,79,.08);border-bottom:1px solid rgba(200,41,79,.08);}
+.trust-item{display:flex;align-items:center;gap:.8rem;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.ti{font-size:1.4rem;}
+
+/* CATEGORIES */
+.categories{padding:7rem 5rem;background:var(--soft);}
+.sec-head{text-align:center;margin-bottom:4rem;}
+.sec-eye{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--hot);margin-bottom:.9rem;
+  display:flex;align-items:center;justify-content:center;gap:.8rem;}
+.sec-eye::before,.sec-eye::after{content:'';width:28px;height:1px;background:var(--rose);}
+.sec-head h2{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3.4rem);font-weight:700;color:var(--deep);line-height:1.15;}
+.sec-head h2 em{font-style:italic;color:var(--hot);}
+
+.cat-grid{display:grid;grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:auto auto;gap:1rem;}
+.cat-card{border-radius:16px;overflow:hidden;position:relative;cursor:none;}
+.cat-card:first-child{grid-row:span 2;}
+.cat-inner{height:100%;min-height:260px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:1.8rem;}
+.cat-card:first-child .cat-inner{min-height:540px;}
+.cat-inner img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:transform .5s cubic-bezier(.25,.46,.45,.94);}
+.cat-inner:hover img{transform:scale(1.06);}
+.cat-inner::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(30,10,20,.82) 0%,rgba(30,10,20,.1) 60%);
+  z-index:1;transition:opacity .35s;}
+.cat-inner:hover::before{opacity:.95;}
+.cat-content{position:relative;z-index:2;}
+.cat-badge{position:absolute;top:1rem;right:1rem;z-index:3;
+  background:var(--gold);color:var(--deep);font-size:.58rem;
+  letter-spacing:.14em;text-transform:uppercase;padding:.28rem .65rem;
+  border-radius:50px;font-weight:700;}
+.cat-tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-bottom:.4rem;}
+.cat-name{font-family:'Playfair Display',serif;font-size:1.45rem;
+  font-weight:700;color:white;line-height:1.2;margin-bottom:.7rem;}
+.cat-card:first-child .cat-name{font-size:2rem;}
+.cat-cta{display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.14);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.25);color:white;padding:.42rem .95rem;
+  border-radius:50px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;cursor:none;transition:background .3s;}
+.cat-cta:hover{background:var(--hot);border-color:var(--hot);}
+
+/* PRODUCTS */
+.products{padding:7rem 5rem;background:white;}
+.prod-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;}
+.prod-header h2{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3vw,3rem);font-weight:700;color:var(--deep);}
+.prod-header h2 em{font-style:italic;color:var(--hot);}
+.see-all{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:.5rem;
+  transition:color .25s;}
+.see-all:hover{color:var(--hot);}
+.see-all .arr{transition:transform .25s;}
+.see-all:hover .arr{transform:translateX(5px);}
+
+.tab-bar{display:flex;gap:.35rem;margin-bottom:3rem;
+  background:var(--soft);padding:.35rem;border-radius:50px;width:fit-content;}
+.tab-btn{padding:.55rem 1.4rem;border-radius:50px;border:none;
+  font-family:'DM Sans',sans-serif;font-size:.75rem;letter-spacing:.1em;
+  text-transform:uppercase;cursor:none;transition:all .3s;
+  color:var(--muted);background:transparent;}
+.tab-btn.active{background:var(--hot);color:white;font-weight:500;
+  box-shadow:0 4px 16px rgba(200,41,79,.35);}
+
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;}
+.prod-card{border-radius:14px;overflow:hidden;background:var(--cream);
+  transition:transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .4s;cursor:none;}
+.prod-card:hover{transform:translateY(-10px);box-shadow:0 22px 55px rgba(30,10,20,.12);}
+.prod-img{aspect-ratio:3/4;position:relative;overflow:hidden;}
+.prod-img img{width:100%;height:100%;object-fit:cover;
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94);}
+.prod-card:hover .prod-img img{transform:scale(1.06);}
+.prod-badge{position:absolute;top:.75rem;left:.75rem;z-index:2;
+  padding:.24rem .65rem;border-radius:50px;font-size:.56rem;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:700;}
+.bn{background:var(--hot);color:white;}
+.bh{background:var(--gold);color:var(--deep);}
+.bs{background:var(--deep);color:white;}
+.prod-wish{position:absolute;top:.75rem;right:.75rem;z-index:2;
+  width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.88);
+  border:none;cursor:none;display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;opacity:0;transition:opacity .3s,background .25s,transform .25s;}
+.prod-card:hover .prod-wish{opacity:1;}
+.prod-wish:hover{background:var(--hot);transform:scale(1.1);}
+.prod-overlay{position:absolute;inset:0;background:rgba(30,10,20,.38);
+  display:flex;align-items:flex-end;justify-content:center;
+  padding:1rem;opacity:0;transition:opacity .3s;}
+.prod-card:hover .prod-overlay{opacity:1;}
+.prod-add{width:100%;padding:.75rem;border-radius:50px;background:white;border:none;
+  cursor:none;font-family:'DM Sans',sans-serif;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--deep);font-weight:500;
+  transition:background .25s,color .25s;}
+.prod-add:hover{background:var(--hot);color:white;}
+.prod-info{padding:1.1rem;}
+.prod-cat{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:.3rem;}
+.prod-name{font-family:'Playfair Display',serif;font-size:1rem;
+  font-weight:600;color:var(--deep);margin-bottom:.35rem;line-height:1.3;}
+.prod-stars{font-size:.65rem;color:var(--gold);letter-spacing:.04em;}
+.prod-rev{font-size:.6rem;color:var(--muted);margin-left:.3rem;}
+.prod-price-row{display:flex;align-items:center;justify-content:space-between;margin-top:.55rem;}
+.prod-price{font-family:'Playfair Display',serif;font-size:1.15rem;
+  font-weight:700;color:var(--deep);}
+.prod-old{font-size:.76rem;color:var(--muted);text-decoration:line-through;margin-left:.35rem;}
+
+/* STORY / ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;min-height:75vh;overflow:hidden;}
+.about-img{position:relative;overflow:hidden;}
+.about-img img{width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
+.about-img:hover img{transform:scale(1.04);}
+.about-img-overlay{position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(30,10,20,.3),transparent);}
+.about-float{position:absolute;bottom:2.5rem;left:2.5rem;
+  background:white;border-radius:14px;padding:1.2rem 1.6rem;
+  box-shadow:0 16px 48px rgba(30,10,20,.2);}
+.af-num{font-family:'Playfair Display',serif;font-size:2rem;
+  font-weight:700;color:var(--hot);line-height:1;}
+.af-text{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-top:.2rem;}
+.about-content{background:var(--deep);padding:6rem 5rem;
+  display:flex;flex-direction:column;justify-content:center;}
+.about-content .sec-eye{justify-content:flex-start;color:var(--champagne);}
+.about-content .sec-eye::before{background:var(--gold);}
+.about-content .sec-eye::after{display:none;}
+.about-content h2{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3vw,3.2rem);font-weight:700;color:white;
+  line-height:1.15;margin-bottom:1.4rem;}
+.about-content h2 em{font-style:italic;color:var(--blush);}
+.about-content p{font-size:.92rem;line-height:1.8;
+  color:rgba(255,255,255,.58);font-weight:300;margin-bottom:1rem;max-width:440px;}
+.about-content blockquote{margin:1.8rem 0;padding:1.2rem 1.6rem;
+  border-left:3px solid var(--gold);background:rgba(255,255,255,.05);
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;
+  color:rgba(255,255,255,.75);line-height:1.6;}
+.about-pills{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem;}
+.pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:var(--champagne);padding:.4rem 1rem;border-radius:50px;
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+
+/* PROMO */
+.promo{background:linear-gradient(135deg,var(--wine),var(--hot),#B5274A);
+  padding:5rem 7rem;display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;position:relative;overflow:hidden;}
+.promo::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,222,179,.08),transparent);
+  right:-150px;top:-200px;pointer-events:none;}
+.promo-left .sec-eye{justify-content:flex-start;color:var(--champagne);}
+.promo-left .sec-eye::before{background:rgba(255,255,255,.4);}
+.promo-left .sec-eye::after{display:none;}
+.promo-left h2{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3.4rem);font-weight:700;color:white;
+  line-height:1.12;margin-bottom:1.2rem;}
+.promo-left h2 em{color:var(--champagne);font-style:italic;}
+.promo-left p{font-size:.92rem;color:rgba(255,255,255,.6);
+  line-height:1.75;font-weight:300;margin-bottom:2rem;}
+.promo-form{display:flex;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);border-radius:50px;
+  overflow:hidden;backdrop-filter:blur(8px);}
+.promo-input{flex:1;padding:.95rem 1.5rem;background:transparent;
+  border:none;outline:none;color:white;font-family:'DM Sans',sans-serif;font-size:.86rem;}
+.promo-input::placeholder{color:rgba(255,255,255,.35);}
+.promo-submit{padding:.95rem 1.8rem;background:white;border:none;color:var(--hot);
+  cursor:none;font-family:'DM Sans',sans-serif;font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:600;border-radius:50px;margin:.25rem;
+  transition:background .25s,color .25s;}
+.promo-submit:hover{background:var(--gold);color:var(--deep);}
+.promo-fine{font-size:.64rem;color:rgba(255,255,255,.3);margin-top:.7rem;letter-spacing:.06em;}
+.promo-right{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+.pstat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:1.4rem;transition:all .3s;}
+.pstat:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25);}
+.pstat-n{font-family:'Playfair Display',serif;font-size:2rem;
+  font-weight:700;color:var(--champagne);}
+.pstat-t{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);margin-top:.3rem;}
+
+/* TESTIMONIALS */
+.testi{padding:7rem 5rem;background:var(--soft);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem;}
+.testi-card{background:white;border-radius:16px;padding:2rem;position:relative;
+  border:1px solid rgba(200,41,79,.08);
+  transition:transform .35s,box-shadow .35s,border-color .35s;}
+.testi-card:hover{transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(30,10,20,.1);border-color:rgba(200,41,79,.2);}
+.testi-card .tq{font-family:'Playfair Display',serif;
+  font-size:4rem;color:var(--blush);line-height:.8;margin-bottom:.5rem;opacity:.65;}
+.testi-stars{color:var(--gold);font-size:.82rem;margin-bottom:.9rem;}
+.testi-text{font-family:'Playfair Display',serif;font-size:.98rem;font-style:italic;
+  color:var(--charcoal);line-height:1.7;margin-bottom:1.5rem;}
+.testi-author{display:flex;align-items:center;gap:.85rem;}
+.testi-av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.testi-av img{width:100%;height:100%;object-fit:cover;}
+.testi-name{font-size:.82rem;font-weight:500;color:var(--deep);}
+.testi-loc{font-size:.68rem;color:var(--muted);}
+.testi-badge{margin-left:auto;background:var(--soft);border-radius:50px;
+  padding:.2rem .6rem;font-size:.56rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--hot);}
+
+/* FOOTER */
+footer{background:var(--deep);color:rgba(255,255,255,.55);
+  padding:5rem 5rem 2.5rem;
+  display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;}
+.f-logo{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;
+  color:white;margin-bottom:.8rem;display:block;}
+.f-logo span{color:var(--rose);font-style:italic;}
+.f-desc{font-size:.83rem;line-height:1.75;color:rgba(255,255,255,.4);
+  font-weight:300;max-width:280px;margin-bottom:.8rem;}
+.f-address{font-size:.78rem;color:rgba(255,255,255,.35);margin-bottom:1.8rem;
+  display:flex;align-items:center;gap:.4rem;}
+.f-socials{display:flex;gap:.65rem;}
+.fsoc{width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;
+  text-decoration:none;cursor:none;transition:all .25s;}
+.fsoc:hover{background:rgba(200,41,79,.4);border-color:var(--rose);}
+.f-col h4{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:1.2rem;}
+.f-col ul{list-style:none;}
+.f-col li{margin-bottom:.55rem;}
+.f-col a{font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;
+  transition:color .25s;font-weight:300;}
+.f-col a:hover{color:var(--blush);}
+.f-bottom{grid-column:1/-1;padding-top:2rem;margin-top:1rem;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;justify-content:space-between;align-items:center;}
+.f-bottom p{font-size:.7rem;color:rgba(255,255,255,.18);}
+
+/* ANIMATIONS */
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .7s ease,transform .7s ease;}
+.reveal.vis{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- ══ NAV ══════════════════════════════════════════════════════ -->
+<nav id="nav">
+  <a href="#" class="logo">Brenda<span>SHOP</span><sub>Lomé</sub></a>
+  <ul class="nav-menu">
+    <li><a href="#categories">Tissus</a></li>
+    <li><a href="#categories">Ongles</a></li>
+    <li><a href="#categories">Cils</a></li>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#promo">Offres</a></li>
+  </ul>
+  <div class="nav-end">
+    <button class="nav-cart">🛒<span class="cart-dot" id="cart-count">0</span></button>
+    <button class="nav-cta">Commander</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <!-- Hero background: African fashion woman -->
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=80&fit=crop"
+         alt="BrendaSHOP mode africaine Lomé" loading="eager">
+  </div>
+
+  <div class="hero-left">
+    <div class="hero-badge">Nouvelle collection disponible</div>
+    <div class="hero-location">📍 Lomé, Togo — Livraison partout au Togo</div>
+    <h1>La <em>femme</em><br>qui <span class="outline">rayonne</span></h1>
+    <p class="hero-sub">Tissus wax premium, ongles tendance et cils de luxe — BrendaSHOP habille et sublime chaque femme de Lomé et au-delà.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Voir la collection</a>
+      <a href="#about" class="btn-outline">Notre histoire</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">5K+</div><div class="stat-l">Clientes fidèles</div></div>
+      <div><div class="stat-n">300+</div><div class="stat-l">Références</div></div>
+      <div><div class="stat-n">4.9★</div><div class="stat-l">Note moyenne</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="mosaic">
+      <!-- Tissu wax africain -->
+      <div class="mos-img m1">
+        <img src="https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=500&q=80&fit=crop"
+             alt="Tissus wax africain">
+        <span class="mos-label">Tissus Wax</span>
+      </div>
+      <!-- Ongles -->
+      <div class="mos-img m2">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80&fit=crop"
+             alt="Ongles gel">
+        <span class="mos-label">Ongles</span>
+      </div>
+      <!-- Cils -->
+      <div class="mos-img m3">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&q=80&fit=crop"
+             alt="Cils extensions">
+        <span class="mos-label">Cils</span>
+      </div>
+      <!-- Mode africaine -->
+      <div class="mos-img m4">
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80&fit=crop"
+             alt="Mode africaine femme">
+        <span class="mos-label">Collection Mode</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ═══════════════════════════════════════════════════ -->
+<div class="marquee">
+  <div class="mtrack">
+    <span>Tissus Wax Premium</span><span class="gem">♦</span>
+    <span>Ongles Gel & Acrylique</span><span class="gem">♦</span>
+    <span>Cils Naturels & 3D</span><span class="gem">♦</span>
+    <span>Livraison Lomé 24h</span><span class="gem">♦</span>
+    <span>BrendaSHOP Lomé</span><span class="gem">♦</span>
+    <span>Qualité Garantie</span><span class="gem">♦</span>
+    <span>Tissus Kente & Ankara</span><span class="gem">♦</span>
+    <span>Paiement Mobile Money</span><span class="gem">♦</span>
+    <span>Tissus Wax Premium</span><span class="gem">♦</span>
+    <span>Ongles Gel & Acrylique</span><span class="gem">♦</span>
+    <span>Cils Naturels & 3D</span><span class="gem">♦</span>
+    <span>Livraison Lomé 24h</span><span class="gem">♦</span>
+    <span>BrendaSHOP Lomé</span><span class="gem">♦</span>
+    <span>Qualité Garantie</span><span class="gem">♦</span>
+    <span>Tissus Kente & Ankara</span><span class="gem">♦</span>
+    <span>Paiement Mobile Money</span><span class="gem">♦</span>
+  </div>
+</div>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-item"><span class="ti">🚚</span> Livraison Lomé 24h</div>
+  <div class="trust-item"><span class="ti">📱</span> Paiement Mobile Money</div>
+  <div class="trust-item"><span class="ti">🔄</span> Échange facile</div>
+  <div class="trust-item"><span class="ti">✨</span> Qualité sélectionnée</div>
+  <div class="trust-item"><span class="ti">💬</span> WhatsApp 7j/7</div>
+</div>
+
+<!-- ══ CATEGORIES ═════════════════════════════════════════════════ -->
+<section class="categories" id="categories">
+  <div class="sec-head reveal">
+    <div class="sec-eye">Nos univers</div>
+    <h2>Tout pour <em>vous sublimer</em></h2>
+  </div>
+  <div class="cat-grid">
+
+    <!-- Tissus – grande carte -->
+    <div class="cat-card reveal">
+      <div class="cat-inner">
+        <img src="https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=900&q=80&fit=crop&crop=center"
+             alt="Tissus wax africain Lomé">
+        <div class="cat-badge">✦ Tendance</div>
+        <div class="cat-content">
+          <div class="cat-tag">Collection 2024</div>
+          <div class="cat-name">Tissus Wax<br>& Kente</div>
+          <a href="#" class="cat-cta">Explorer →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ongles -->
+    <div class="cat-card reveal d1">
+      <div class="cat-inner">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&q=80&fit=crop"
+             alt="Ongles gel pose">
+        <div class="cat-content">
+          <div class="cat-tag">Bestseller</div>
+          <div class="cat-name">Ongles<br>& Manucure</div>
+          <a href="#" class="cat-cta">Explorer →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cils -->
+    <div class="cat-card reveal d2">
+      <div class="cat-inner">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80&fit=crop"
+             alt="Cils extensions femme">
+        <div class="cat-badge" style="background:var(--deep)">Top vente</div>
+        <div class="cat-content">
+          <div class="cat-tag">Regard sublime</div>
+          <div class="cat-name">Cils &<br>Extensions</div>
+          <a href="#" class="cat-cta">Explorer →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tissus satin -->
+    <div class="cat-card reveal d1">
+      <div class="cat-inner">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80&fit=crop"
+             alt="Tissu satin coloré">
+        <div class="cat-content">
+          <div class="cat-tag">Nouveau stock</div>
+          <div class="cat-name">Satin &<br>Dentelle</div>
+          <a href="#" class="cat-cta">Explorer →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accessoires beauté -->
+    <div class="cat-card reveal d2">
+      <div class="cat-inner">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80&fit=crop"
+             alt="Accessoires beauté femme">
+        <div class="cat-content">
+          <div class="cat-tag">Beauté</div>
+          <div class="cat-name">Accessoires<br>& Soins</div>
+          <a href="#" class="cat-cta">Explorer →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ═══════════════════════════════════════════════════ -->
+<section class="products" id="products">
+  <div class="prod-header reveal">
+    <div>
+      <div class="sec-eye" style="justify-content:flex-start">Sélection du moment</div>
+      <h2>Nos <em>coups de cœur</em></h2>
+    </div>
+    <a href="#" class="see-all">Tout voir <span class="arr">→</span></a>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="filterTab(this,'all')">Tout</button>
+    <button class="tab-btn" onclick="filterTab(this,'tissus')">Tissus</button>
+    <button class="tab-btn" onclick="filterTab(this,'ongles')">Ongles</button>
+    <button class="tab-btn" onclick="filterTab(this,'cils')">Cils</button>
+  </div>
+
+  <div class="prod-grid" id="pgrid">
+
+    <!-- 1 – Wax Ankara -->
+    <div class="prod-card reveal" data-cat="tissus">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=400&q=80&fit=crop"
+             alt="Wax Ankara Royal">
+        <span class="prod-badge bn">New</span>
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Tissu Wax</div>
+        <div class="prod-name">Wax Ankara Royal</div>
+        <div><span class="prod-stars">★★★★★</span><span class="prod-rev">(124)</span></div>
+        <div class="prod-price-row"><span class="prod-price">5 500 FCFA</span></div>
+      </div>
+    </div>
+
+    <!-- 2 – Kit ongles -->
+    <div class="prod-card reveal d1" data-cat="ongles">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80&fit=crop"
+             alt="Kit gel UV ongles">
+        <span class="prod-badge bh">🔥 Hot</span>
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Ongles Gel</div>
+        <div class="prod-name">Kit Gel UV Complet</div>
+        <div><span class="prod-stars">★★★★★</span><span class="prod-rev">(89)</span></div>
+        <div class="prod-price-row">
+          <span class="prod-price">18 000 FCFA<span class="prod-old">22 000</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 – Cils 3D -->
+    <div class="prod-card reveal d2" data-cat="cils">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&q=80&fit=crop"
+             alt="Cils 3D naturels">
+        <span class="prod-badge bn">New</span>
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Cils 3D</div>
+        <div class="prod-name">Cils Naturels 3D</div>
+        <div><span class="prod-stars">★★★★★</span><span class="prod-rev">(203)</span></div>
+        <div class="prod-price-row"><span class="prod-price">3 500 FCFA</span></div>
+      </div>
+    </div>
+
+    <!-- 4 – Tissu satin -->
+    <div class="prod-card reveal d3" data-cat="tissus">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop"
+             alt="Satin imprimé fleuri">
+        <span class="prod-badge bs">-20%</span>
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Tissu Satin</div>
+        <div class="prod-name">Satin Imprimé Fleuri</div>
+        <div><span class="prod-stars">★★★★☆</span><span class="prod-rev">(67)</span></div>
+        <div class="prod-price-row">
+          <span class="prod-price">4 000 FCFA<span class="prod-old">5 000</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 – Ongles press-on -->
+    <div class="prod-card reveal" data-cat="ongles">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80&fit=crop&crop=bottom"
+             alt="Press-on nails roses">
+        <span class="prod-badge bh">Popular</span>
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Press-on Nails</div>
+        <div class="prod-name">Ongles Fleuris Roses</div>
+        <div><span class="prod-stars">★★★★★</span><span class="prod-rev">(145)</span></div>
+        <div class="prod-price-row"><span class="prod-price">2 500 FCFA</span></div>
+      </div>
+    </div>
+
+    <!-- 6 – Cils volume XXL -->
+    <div class="prod-card reveal d1" data-cat="cils">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80&fit=crop&crop=face"
+             alt="Cils volume XXL">
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Cils Volume</div>
+        <div class="prod-name">Volume XXL Noirs</div>
+        <div><span class="prod-stars">★★★★★</span><span class="prod-rev">(78)</span></div>
+        <div class="prod-price-row"><span class="prod-price">4 200 FCFA</span></div>
+      </div>
+    </div>
+
+    <!-- 7 – Tissu brodé -->
+    <div class="prod-card reveal d2" data-cat="tissus">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80&fit=crop"
+             alt="Tissu brodé doré africain">
+        <span class="prod-badge bn">Exclu</span>
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Tissu Brodé</div>
+        <div class="prod-name">Broderie Dorée Luxe</div>
+        <div><span class="prod-stars">★★★★★</span><span class="prod-rev">(52)</span></div>
+        <div class="prod-price-row"><span class="prod-price">8 500 FCFA</span></div>
+      </div>
+    </div>
+
+    <!-- 8 – Cosmétiques -->
+    <div class="prod-card reveal d3" data-cat="ongles">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80&fit=crop"
+             alt="Vernis et accessoires ongles">
+        <button class="prod-wish" onclick="toggleWish(this)">🤍</button>
+        <div class="prod-overlay"><button class="prod-add" onclick="addCart(this)">+ Panier</button></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Nail Art</div>
+        <div class="prod-name">Set Strass & Vernis</div>
+        <div><span class="prod-stars">★★★★☆</span><span class="prod-rev">(93)</span></div>
+        <div class="prod-price-row"><span class="prod-price">1 800 FCFA</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ ABOUT ═══════════════════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="about-img reveal">
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&fit=crop"
+         alt="Brenda, fondatrice BrendaSHOP Lomé">
+    <div class="about-img-overlay"></div>
+    <div class="about-float">
+      <div class="af-num">5 000+</div>
+      <div class="af-text">Femmes sublimées à Lomé</div>
+    </div>
+  </div>
+  <div class="about-content reveal d2">
+    <div class="sec-eye">Notre histoire</div>
+    <h2>Née à <em>Lomé</em>,<br>faite pour toutes</h2>
+    <p>BrendaSHOP est née d'une passion simple : croire que chaque femme mérite d'accéder à des produits de qualité, à des prix justes, sans avoir à se battre.</p>
+    <p>Depuis Lomé, nous sélectionnons les meilleurs tissus wax, les ongles les plus tendance et les cils les plus sublimes — pour que vous rayonniez chaque jour.</p>
+    <blockquote>
+      "La beauté d'une femme togolaise ne se cache pas — elle s'expose, elle s'assume, elle brille."
+    </blockquote>
+    <div class="about-pills">
+      <span class="pill">🇹🇬 Basée à Lomé</span>
+      <span class="pill">✦ Qualité sélectionnée</span>
+      <span class="pill">📦 Livraison rapide</span>
+      <span class="pill">💅 3 univers beauté</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROMO ════════════════════════════════════════════════════════ -->
+<section class="promo" id="promo">
+  <div class="promo-left reveal">
+    <div class="sec-eye">Offre exclusive</div>
+    <h2>-15% sur votre<br><em>1ère commande</em></h2>
+    <p>Inscrivez-vous et recevez immédiatement votre code promo, plus les dernières tendances BrendaSHOP directement sur votre téléphone.</p>
+    <div class="promo-form">
+      <input class="promo-input" type="email" placeholder="Votre adresse email…" id="promo-email">
+      <button class="promo-submit" id="promo-btn">J'en profite</button>
+    </div>
+    <p class="promo-fine">Pas de spam · Résiliable à tout moment</p>
+  </div>
+  <div class="promo-right reveal d2">
+    <div class="pstat"><div class="pstat-n">5K+</div><div class="pstat-t">Clientes à Lomé</div></div>
+    <div class="pstat"><div class="pstat-n">300+</div><div class="pstat-t">Références dispo</div></div>
+    <div class="pstat"><div class="pstat-n">24h</div><div class="pstat-t">Livraison Lomé</div></div>
+    <div class="pstat"><div class="pstat-n">4.9★</div><div class="pstat-t">Avis clients</div></div>
+  </div>
+</section>
+
+<!-- ══ TÉMOIGNAGES ════════════════════════════════════════════════ -->
+<section class="testi" id="avis">
+  <div class="sec-head reveal">
+    <div class="sec-eye">Elles nous font confiance</div>
+    <h2>Ce que disent nos<br><em>clientes de Lomé</em></h2>
+  </div>
+  <div class="testi-grid">
+
+    <div class="testi-card reveal">
+      <div class="tq">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">Les tissus wax sont d'une qualité incroyable ! Ma robe de mariage faite avec le wax BrendaSHOP a fait sensation. Je recommande à toutes mes amies.</div>
+      <div class="testi-author">
+        <div class="testi-av">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80&fit=crop&crop=face"
+               alt="Aminata cliente">
+        </div>
+        <div>
+          <div class="testi-name">Aminata K.</div>
+          <div class="testi-loc">Lomé · Cliente depuis 1 an</div>
+        </div>
+        <div class="testi-badge">✓ Vérifié</div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal d1">
+      <div class="tq">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">Mes cils ne ressemblent plus aux trucs du marché ! Ceux de BrendaSHOP sont naturels, ils tiennent longtemps et le rendu est sublime. Brenda est sérieuse.</div>
+      <div class="testi-author">
+        <div class="testi-av">
+          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=100&q=80&fit=crop&crop=face"
+               alt="Fatoumata cliente">
+        </div>
+        <div>
+          <div class="testi-name">Fatoumata D.</div>
+          <div class="testi-loc">Lomé · Cliente depuis 8 mois</div>
+        </div>
+        <div class="testi-badge">✓ Vérifié</div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal d2">
+      <div class="tq">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">Le kit gel ongles est parfait — tout est inclus, les ongles tiennent des semaines. Et la livraison était là le lendemain matin. BrendaSHOP c'est la référence à Lomé !</div>
+      <div class="testi-author">
+        <div class="testi-av">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=100&q=80&fit=crop&crop=face"
+               alt="Rokhaya cliente">
+        </div>
+        <div>
+          <div class="testi-name">Rokhaya S.</div>
+          <div class="testi-loc">Lomé · Cliente depuis 6 mois</div>
+        </div>
+        <div class="testi-badge">✓ Vérifié</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════════ -->
+<footer>
+  <div>
+    <span class="f-logo">Brenda<span>SHOP</span></span>
+    <p class="f-desc">Votre boutique féminine à Lomé — tissus wax, ongles et cils de qualité pour toutes les femmes qui veulent briller chaque jour.</p>
+    <p class="f-address">📍 Lomé, Togo · Quartier Agbalépédogan</p>
+    <div class="f-socials">
+      <a class="fsoc" href="#" title="WhatsApp">💬</a>
+      <a class="fsoc" href="#" title="TikTok">📱</a>
+      <a class="fsoc" href="#" title="Instagram">📸</a>
+      <a class="fsoc" href="#" title="Facebook">🔵</a>
+    </div>
+  </div>
+  <div class="f-col">
+    <h4>Boutique</h4>
+    <ul>
+      <li><a href="#">Tissus Wax</a></li>
+      <li><a href="#">Tissus Satin</a></li>
+      <li><a href="#">Ongles & Gel</a></li>
+      <li><a href="#">Cils & Extensions</a></li>
+      <li><a href="#">Coffrets Cadeaux</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>BrendaSHOP</h4>
+    <ul>
+      <li><a href="#">Notre histoire</a></li>
+      <li><a href="#">Nos engagements</a></li>
+      <li><a href="#">Blog beauté</a></li>
+      <li><a href="#">Partenariats</a></li>
+      <li><a href="#">Recrutement</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Aide</h4>
+    <ul>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Livraison Lomé</a></li>
+      <li><a href="#">Échanges & retours</a></li>
+      <li><a href="#">WhatsApp</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div class="f-bottom">
+    <p>© 2024 BrendaSHOP · Lomé, Togo · Tous droits réservés · Made with 💅 pour les femmes togolaises</p>
+    <p>Designed to convert.</p>
+  </div>
+</footer>
+
+<script>
+// Cursor
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(loop);})();
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('stuck',scrollY>80);});
+
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Tab filter
+function filterTab(btn,cat){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.prod-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});
+}
+
+// Cart
+let count=0;
+function addCart(btn){
+  count++;
+  document.getElementById('cart-count').textContent=count;
+  const orig=btn.textContent;
+  btn.textContent='✓ Ajouté !';
+  btn.style.background='var(--hot)';btn.style.color='white';
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';},2000);
+}
+
+// Wishlist
+function toggleWish(btn){
+  const loved=btn.textContent==='❤️';
+  btn.textContent=loved?'🤍':'❤️';
+  btn.style.background=loved?'':'var(--hot)';
+}
+
+// Promo
+document.getElementById('promo-btn').addEventListener('click',function(){
+  const v=document.getElementById('promo-email').value;
+  if(!v.includes('@')){
+    this.previousElementSibling && null;
+    document.getElementById('promo-email').style.outline='2px solid rgba(255,255,255,.6)';
+    document.getElementById('promo-email').placeholder='Email requis…';
+    setTimeout(()=>{
+      document.getElementById('promo-email').style.outline='';
+      document.getElementById('promo-email').placeholder='Votre adresse email…';},2200);
+  } else {
+    this.textContent='🎉 Code envoyé !';
+    this.style.background='#27AE60';this.style.color='white';
+    document.getElementById('promo-email').value='';
+    setTimeout(()=>{this.textContent="J'en profite";this.style.background='';this.style.color='';},3500);
+  }
+});
+</script>
+</body>
+</html>
