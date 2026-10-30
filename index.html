@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/web/hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/web/hero-noire.jpg" fetchpriority="high">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Store","name":"BrendaSTYLE","description":"Boutique féminine à Lomé : tissus wax et satin, press-on nails.","url":"https://alexcruss.github.io/BRENDASHOP/","image":"https://alexcruss.github.io/BRENDASHOP/images/web/og.jpg","telephone":"+22893150389","sameAs":["https://www.tiktok.com/@brendastyle02"],"address":{"@type":"PostalAddress","streetAddress":"Adidogomé","addressLocality":"Lomé","addressCountry":"TG"}}
@@ -175,7 +175,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
   min-width:min(100%,300px);animation:rise 1.2s .2s var(--ease) both;}
 .arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;
   box-shadow:0 50px 90px -40px rgba(0,0,0,.8);}
-.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;animation:settle 2.4s var(--ease) both;}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;animation:settle 2.4s var(--ease) both;}
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .arch::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,10,18,.5));}
 .arch-line{position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(201,161,91,.6);border-radius:999px 999px 0 0;pointer-events:none;}
@@ -187,7 +187,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
   letter-spacing:.2em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6);}
 .float::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,18,.6),transparent 55%);}
 .f1{width:34%;aspect-ratio:4/5;left:-16%;bottom:9%;}
-.f2{width:29%;aspect-ratio:1/1;right:-9%;top:12%;}
+.f2{width:29%;aspect-ratio:1/1;right:-9%;top:44%;}
 .seal{position:absolute;z-index:4;right:-5%;bottom:-3%;width:clamp(86px,9vw,124px);height:auto;animation:spin 28s linear infinite;}
 .seal text{font-family:var(--sans);font-size:9.4px;font-weight:500;letter-spacing:.14em;fill:var(--champagne);}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -285,7 +285,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 /* NOTRE HISTOIRE */
 .about{display:grid;grid-template-columns:1fr 1fr;background:var(--deep);color:#fff;overflow:hidden;}
 .about-img{position:relative;min-height:clamp(420px,52vw,760px);overflow:hidden;}
-.about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transition:transform 1.4s var(--ease);}
+.about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;transition:transform 1.4s var(--ease);}
 .about-img:hover img{transform:scale(1.04);}
 .about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--deep)),linear-gradient(0deg,rgba(26,10,18,.4),transparent 40%);}
 .about-float{position:absolute;z-index:2;left:clamp(1.2rem,3vw,3rem);bottom:clamp(1.2rem,3vw,3rem);padding:1.3rem 1.8rem;
@@ -530,15 +530,15 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     <div class="hero-art">
       <div class="arch-line"></div>
       <div class="arch">
-        <img src="images/web/hero.jpg" width="1200" height="1500" fetchpriority="high"
-             alt="Portrait d’une jeune femme élégante, fond rose poudré">
+        <img src="images/web/hero-noire.jpg" width="1000" height="1500" fetchpriority="high"
+             alt="Portrait d’une femme au foulard doré, lumière de fin de journée">
       </div>
       <figure class="float f1">
-        <img src="images/web/ongles-gel.jpg" width="800" height="1200" loading="lazy" alt="Ongles en gel noir et écaille">
+        <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" alt="Mains aux ongles décorés et bagues">
         <figcaption>Press-on</figcaption>
       </figure>
       <figure class="float f2">
-        <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" style="object-position:50% 30%" alt="Tissus wax colorés">
+        <img src="images/web/wax-bleu.jpg" width="1600" height="1073" loading="lazy" style="object-position:62% 60%" alt="Tissu wax bleu à motifs de papillons">
         <figcaption>Tissus</figcaption>
       </figure>
       <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
@@ -602,8 +602,8 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     </div>
     <div class="cat-grid">
 
-      <a href="#products" data-filter="tissus" class="cat-card reveal" style="--pos:50% 40%">
-        <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" alt="Piles de tissus wax colorés dans une boutique">
+      <a href="#products" data-filter="tissus" class="cat-card reveal" style="--pos:50% 25%">
+        <img src="images/web/tissus-femme.jpg" width="1067" height="1600" loading="lazy" alt="Femme souriante en robe wax devant des tissus et des tableaux colorés">
         <span class="cat-num">01</span>
         <span class="cat-badge">✦ Tendance</span>
         <span class="cat-in">
@@ -613,8 +613,8 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         </span>
       </a>
 
-      <a href="#products" data-filter="ongles" class="cat-card reveal d1" style="--pos:50% 48%">
-        <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" alt="Mains aux ongles décorés et bagues">
+      <a href="#products" data-filter="ongles" class="cat-card reveal d1" style="--pos:50% 28%">
+        <img src="images/web/ongles-visage.jpg" width="999" height="1500" loading="lazy" alt="Portrait d’une femme à la peau noire, mains aux ongles rouges">
         <span class="cat-num">02</span>
         <span class="cat-in">
           <span class="cat-tag">Beauté</span>
@@ -669,7 +669,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 
       <article class="prod-card reveal" data-cat="tissus">
         <div class="prod-img">
-          <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" style="--pos:50% 28%" alt="Wax Ankara Royal, tissus aux motifs colorés">
+          <img src="images/web/wax-bleu.jpg" width="1600" height="1073" loading="lazy" style="--pos:58% 55%" alt="Wax Ankara Royal, tissu wax bleu à motifs de papillons">
           <span class="prod-badge dark">Nouveau</span>
           <button class="prod-wish" type="button" aria-label="Ajouter Wax Ankara Royal aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
           <button class="prod-add" type="button">Ajouter à ma commande</button>
@@ -683,14 +683,14 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 
       <article class="prod-card reveal d1" data-cat="ongles">
         <div class="prod-img">
-          <img src="images/web/ongles-gel.jpg" width="800" height="1200" loading="lazy" alt="Press-on nails noirs et écaille">
+          <img src="images/web/ongles-visage.jpg" width="999" height="1500" loading="lazy" style="--pos:50% 35%" alt="Press-on nails rouges sur peau noire">
           <span class="prod-badge gold">Coup de cœur</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Noir &amp; Écaille aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Rouge Glossy aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
           <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
           <p class="prod-cat">Press-on nails</p>
-          <h3 class="prod-name">Press-on Noir &amp; Écaille</h3>
+          <h3 class="prod-name">Press-on Rouge Glossy</h3>
           <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
@@ -724,14 +724,14 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 
       <article class="prod-card reveal d1" data-cat="tissus">
         <div class="prod-img">
-          <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" style="--pos:30% 78%;--z:1.7" alt="Tissu brodé aux reflets dorés">
+          <img src="images/web/wax-orange.jpg" width="1000" height="1500" loading="lazy" style="--pos:50% 40%" alt="Vêtements en wax rouge et orange sur un portant">
           <span class="prod-badge dark">Exclusivité</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Broderie Dorée Luxe aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-wish" type="button" aria-label="Ajouter Wax Rouge Soleil aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
           <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
-          <p class="prod-cat">Tissu brodé</p>
-          <h3 class="prod-name">Broderie Dorée Luxe</h3>
+          <p class="prod-cat">Tissu wax</p>
+          <h3 class="prod-name">Wax Rouge Soleil</h3>
           <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
@@ -756,7 +756,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 <!-- ══ NOTRE HISTOIRE ═══════════════════════════════════════════ -->
 <section class="about" id="about">
   <div class="about-img reveal">
-    <img src="images/web/portrait-chaleur.jpg" width="900" height="1350" loading="lazy" alt="Portrait de femme aux tons chauds, yeux fermés">
+    <img src="images/web/a-propos.jpg" width="1000" height="1500" loading="lazy" alt="Femme souriante portant un foulard wax">
     <div class="about-float">
       <div class="af-num">1&nbsp;100+</div>
       <div class="af-text">Abonnées sur TikTok</div>
