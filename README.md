@@ -12,7 +12,7 @@ Site vitrine réalisé pour **BrendaSTYLE**, boutique de tissus wax, satin et pr
 
 ## À compléter avec Brenda
 
-Le catalogue (noms de produits) est un exemple, et les prix ne sont pas affichés. Quand elle les confirme, les ajouter dans les cartes `.prod-card` de `index.html`. Le numéro WhatsApp (+228 93 15 03 89) vient de sa bio TikTok.
+Le catalogue (noms de produits) est un exemple, et les prix ne sont pas affichés. Quand elle les confirme, les ajouter dans les cartes `.prod-card` de `index.html`. Le numéro WhatsApp de Brenda (+228 93 15 03 89) est utilisé partout : un clic dessus, sur « Commander » ou sur « Demander le prix » ouvre WhatsApp.
 
 ## Technique
 
@@ -20,10 +20,10 @@ Site statique, un seul `index.html` (CSS et JS en ligne), responsive, hébergé 
 
 ## Crédits photo
 
-Photos [Unsplash](https://unsplash.com/) (licence Unsplash, usage commercial permis) :
+Portraits de Brenda (accueil et « Notre histoire ») : photos fournies par Brenda.
 
-- Accueil : [Trésor Kande](https://unsplash.com/photos/G5uaYmDyv88)
-- Notre histoire : [Prince Akachi](https://unsplash.com/photos/i2hoD-C2RUA)
+Autres photos [Unsplash](https://unsplash.com/) (licence Unsplash, usage commercial permis) :
+
 - Tissus wax : [Albert Luphahla](https://unsplash.com/photos/93wNLY3fjFA)
 - Press-on nails : [Reece van der Merwe](https://unsplash.com/photos/F_JclIZa4D8)
 - Wax bleu : [Barney Goodman](https://unsplash.com/photos/jjWXuu3Ewhg)

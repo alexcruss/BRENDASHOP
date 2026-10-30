@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/web/hero-noire.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/web/brenda-hero.jpg" fetchpriority="high">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Store","name":"BrendaSTYLE","description":"Boutique féminine à Lomé : tissus wax et satin, press-on nails.","url":"https://alexcruss.github.io/BRENDASHOP/","image":"https://alexcruss.github.io/BRENDASHOP/images/web/og.jpg","telephone":"+22893150389","sameAs":["https://www.tiktok.com/@brendastyle02"],"address":{"@type":"PostalAddress","streetAddress":"Adidogomé","addressLocality":"Lomé","addressCountry":"TG"}}
@@ -175,7 +175,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
   min-width:min(100%,300px);animation:rise 1.2s .2s var(--ease) both;}
 .arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;
   box-shadow:0 50px 90px -40px rgba(0,0,0,.8);}
-.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;animation:settle 2.4s var(--ease) both;}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;scale:1.3;transform-origin:46% 30%;animation:settle 2.4s var(--ease) both;}
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .arch::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,10,18,.5));}
 .arch-line{position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(201,161,91,.6);border-radius:999px 999px 0 0;pointer-events:none;}
@@ -285,12 +285,14 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 /* NOTRE HISTOIRE */
 .about{display:grid;grid-template-columns:1fr 1fr;background:var(--deep);color:#fff;overflow:hidden;}
 .about-img{position:relative;min-height:clamp(420px,52vw,760px);overflow:hidden;}
-.about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;transition:transform 1.4s var(--ease);}
+.about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 36%;transition:transform 1.4s var(--ease);}
 .about-img:hover img{transform:scale(1.04);}
 .about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--deep)),linear-gradient(0deg,rgba(26,10,18,.4),transparent 40%);}
 .about-float{position:absolute;z-index:2;left:clamp(1.2rem,3vw,3rem);bottom:clamp(1.2rem,3vw,3rem);padding:1.3rem 1.8rem;
   background:rgba(251,246,241,.94);backdrop-filter:blur(10px);color:var(--deep);border-radius:var(--r);
   box-shadow:0 30px 50px -24px rgba(0,0,0,.6);}
+.about-name{position:absolute;z-index:2;right:clamp(1.2rem,3vw,3rem);bottom:clamp(1.2rem,3vw,3rem);font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1;color:var(--champagne);text-shadow:0 2px 14px rgba(0,0,0,.55);}
 .af-num{font-family:var(--serif);font-size:2.7rem;font-weight:500;line-height:1;color:var(--hot);}
 .af-text{margin-top:.35rem;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
 .about-content{display:flex;flex-direction:column;justify-content:center;padding:clamp(3.5rem,7vw,7.5rem) clamp(1.5rem,6vw,6.5rem) clamp(3.5rem,7vw,7.5rem) clamp(1.5rem,3vw,3rem);}
@@ -530,8 +532,8 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     <div class="hero-art">
       <div class="arch-line"></div>
       <div class="arch">
-        <img src="images/web/hero-noire.jpg" width="1000" height="1500" fetchpriority="high"
-             alt="Portrait d’une femme au foulard doré, lumière de fin de journée">
+        <img src="images/web/brenda-hero.jpg" width="1674" height="2200" fetchpriority="high"
+             alt="Brenda, en robe noire satinée, la main près du visage">
       </div>
       <figure class="float f1">
         <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" alt="Mains aux ongles décorés et bagues">
@@ -756,7 +758,8 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 <!-- ══ NOTRE HISTOIRE ═══════════════════════════════════════════ -->
 <section class="about" id="about">
   <div class="about-img reveal">
-    <img src="images/web/a-propos.jpg" width="1000" height="1500" loading="lazy" alt="Femme souriante portant un foulard wax">
+    <img src="images/web/brenda-assise.jpg" width="1228" height="1600" loading="lazy" alt="Brenda, assise de profil dans un décor de studio brun">
+    <div class="about-name" aria-hidden="true">Brenda</div>
     <div class="about-float">
       <div class="af-num">1&nbsp;100+</div>
       <div class="af-text">Abonnées sur TikTok</div>
@@ -788,7 +791,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <a class="btn btn-gold" id="contact-wa" href="https://wa.me/22893150389" target="_blank" rel="noopener">Commander sur WhatsApp</a>
         <a class="btn btn-ghost" href="https://www.tiktok.com/@brendastyle02" target="_blank" rel="noopener">Suivre sur TikTok</a>
       </div>
-      <p class="promo-note"><a href="tel:+22893150389">+228 93 15 03 89</a> · Adidogomé, Lomé · @brendastyle02</p>
+      <p class="promo-note"><a class="wa-number" href="https://wa.me/22893150389" target="_blank" rel="noopener" aria-label="Écrire à BrendaSTYLE sur WhatsApp au +228 93 15 03 89">+228 93 15 03 89</a> · Adidogomé, Lomé · @brendastyle02</p>
     </div>
     <div class="promo-right reveal d2">
       <div class="pstat"><div class="pstat-n">1&nbsp;100+</div><div class="pstat-t">Abonnées TikTok</div></div>
@@ -834,7 +837,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <h4>Contact</h4>
         <ul>
           <li><a href="https://wa.me/22893150389" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="tel:+22893150389">+228 93 15 03 89</a></li>
+          <li><a class="wa-number" href="https://wa.me/22893150389" target="_blank" rel="noopener" aria-label="Écrire à BrendaSTYLE sur WhatsApp au +228 93 15 03 89">+228 93 15 03 89</a></li>
           <li><a href="#contact">Adidogomé, Lomé</a></li>
         </ul>
       </div>
@@ -930,6 +933,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     $('.prod-ask',c).href=wa('Bonjour BrendaSTYLE, quel est le prix de « '+name+' » ? Merci !');
   });
   $('#contact-wa').href=wa('Bonjour BrendaSTYLE, je souhaite passer commande.');
+  $$('.wa-number').forEach(function(a){a.href=wa('Bonjour BrendaSTYLE, j’ai une question.');});
 
   /* ma commande (panier envoyé sur WhatsApp) */
   var order={},names=[];
