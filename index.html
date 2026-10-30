@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BrendaSTYLE — Tissus, Ongles & Cils · Lomé, Togo</title>
-<meta name="description" content="BrendaSTYLE, boutique féminine à Lomé : tissus wax et satin, ongles gel et cils de luxe. Livraison à Lomé en 24 h, paiement Mobile Money.">
+<title>BrendaSTYLE — Tissus & Press-on nails · Lomé, Togo</title>
+<meta name="description" content="BrendaSTYLE, boutique féminine à Adidogomé (Lomé) : tissus wax et satin, press-on nails. Commande directe sur WhatsApp.">
 <meta name="theme-color" content="#1A0A12">
 <link rel="canonical" href="https://alexcruss.github.io/BRENDASHOP/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="BrendaSTYLE">
-<meta property="og:title" content="BrendaSTYLE — Tissus, Ongles & Cils · Lomé">
-<meta property="og:description" content="Tissus wax premium, ongles tendance et cils de luxe. Livraison à Lomé en 24 h.">
+<meta property="og:title" content="BrendaSTYLE — Tissus & Press-on nails · Lomé">
+<meta property="og:description" content="Tissus wax premium et press-on nails tendance, à Adidogomé (Lomé). Commande sur WhatsApp.">
 <meta property="og:url" content="https://alexcruss.github.io/BRENDASHOP/">
 <meta property="og:image" content="https://alexcruss.github.io/BRENDASHOP/images/web/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
 <link rel="preload" as="image" href="images/web/hero.jpg" fetchpriority="high">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"BrendaSTYLE","description":"Boutique féminine à Lomé : tissus wax et satin, ongles gel et cils.","url":"https://alexcruss.github.io/BRENDASHOP/","image":"https://alexcruss.github.io/BRENDASHOP/images/web/og.jpg","address":{"@type":"PostalAddress","addressLocality":"Lomé","addressCountry":"TG"}}
+{"@context":"https://schema.org","@type":"Store","name":"BrendaSTYLE","description":"Boutique féminine à Lomé : tissus wax et satin, press-on nails.","url":"https://alexcruss.github.io/BRENDASHOP/","image":"https://alexcruss.github.io/BRENDASHOP/images/web/og.jpg","telephone":"+22893150389","sameAs":["https://www.tiktok.com/@brendastyle02"],"address":{"@type":"PostalAddress","streetAddress":"Adidogomé","addressLocality":"Lomé","addressCountry":"TG"}}
 </script>
 <style>
 :root{
@@ -165,6 +165,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 .stat:first-child{padding-left:0;border-left:0;}
 .stat-n{display:block;font-family:var(--serif);font-size:2.6rem;font-weight:500;line-height:1;color:var(--champagne);}
 .stat-l{display:block;margin-top:.5rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.stat-n,.pstat-n,.af-num{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;}
 .rise{animation:rise 1s var(--ease) both;}
 .rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.22s}.rise.d3{animation-delay:.34s}.rise.d4{animation-delay:.46s}.rise.d5{animation-delay:.6s}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
@@ -205,11 +206,9 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 
 /* RÉASSURANCE */
 .trust{background:var(--paper);border-bottom:1px solid var(--line);}
-.trust-in{display:grid;grid-template-columns:repeat(5,1fr);}
-.trust-item{display:flex;align-items:center;justify-content:center;gap:.9rem;padding:1.9rem .8rem;
-  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-align:left;
-  border-left:1px solid var(--line);}
-.trust-item:first-child{border-left:0;}
+.trust-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);}
+.trust-item{display:flex;align-items:center;justify-content:center;gap:.9rem;padding:1.9rem .8rem;background:var(--paper);
+  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-align:left;}
 .trust-item .ico{width:26px;height:26px;color:var(--gold-lo);stroke-width:1.3;}
 
 /* UNIVERS */
@@ -217,6 +216,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 .cat-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:repeat(2,minmax(280px,1fr));gap:1.1rem;}
 .cat-card{position:relative;display:block;overflow:hidden;border-radius:var(--r);text-decoration:none;color:#fff;isolation:isolate;min-height:280px;}
 .cat-card:first-child{grid-row:span 2;}
+.cat-card.wide{grid-column:2/4;}
 .cat-card img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);
   transition:transform 1.1s var(--ease);}
 .cat-card:hover img{transform:scale(1.07);}
@@ -252,9 +252,9 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 .tab-btn:hover{color:var(--deep);}
 .tab-btn[aria-pressed=true]{color:var(--deep);}
 .tab-btn[aria-pressed=true]::after{transform:scaleX(1);}
-.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem 1.6rem;}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3.2rem 1.8rem;}
 .prod-card{position:relative;}
-.prod-img{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r);background:var(--soft);}
+.prod-img{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);background:var(--soft);}
 .prod-img img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);scale:var(--z,1);transform-origin:var(--pos,50% 50%);
   transition:transform 1s var(--ease);}
 .prod-card:hover .prod-img img{transform:scale(1.06);}
@@ -277,11 +277,10 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 .prod-add:hover{background:var(--deep);color:var(--champagne);}
 .prod-info{padding-top:1.1rem;}
 .prod-cat{font-size:.66rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:.4rem;}
-.prod-name{font-family:var(--serif);font-size:1.5rem;font-weight:500;line-height:1.15;color:var(--deep);margin-bottom:.4rem;}
-.prod-meta{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--muted);margin-bottom:.55rem;}
-.prod-stars{color:var(--gold);letter-spacing:.1em;font-size:.78rem;}
-.prod-price{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--deep);display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;}
-.prod-old{font-family:var(--sans);font-size:.82rem;font-weight:400;color:var(--muted);text-decoration:line-through;}
+.prod-name{font-family:var(--serif);font-size:1.5rem;font-weight:500;line-height:1.15;color:var(--deep);margin-bottom:.9rem;}
+.prod-ask{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--deep);text-decoration:none;padding-bottom:.25rem;border-bottom:1px solid var(--gold);transition:color .3s,gap .3s var(--ease);}
+.prod-ask:hover{color:var(--hot);gap:.9rem;}
+.prod-ask .ico{width:1em;height:1em;}
 
 /* NOTRE HISTOIRE */
 .about{display:grid;grid-template-columns:1fr 1fr;background:var(--deep);color:#fff;overflow:hidden;}
@@ -307,7 +306,7 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
   font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--champagne);}
 .pill::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);}
 
-/* OFFRE */
+/* COMMANDER */
 .promo{position:relative;overflow:hidden;color:#fff;padding:clamp(4.5rem,8vw,7.5rem) 0;
   background:radial-gradient(60% 90% at 100% 0%,rgba(184,36,74,.45),transparent 60%),linear-gradient(135deg,#2A0F1D,var(--wine) 65%,#3E0F25);}
 .promo::before,.promo::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(201,161,91,.22);pointer-events:none;}
@@ -317,42 +316,42 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
 .promo .eyebrow{color:var(--gold);}
 .promo h2.title{color:#fff;margin-bottom:1.3rem;}
 .promo h2.title em{color:var(--champagne);}
-.promo-lead{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.72);max-width:30rem;margin-bottom:2rem;}
-.promo-form{display:flex;gap:.5rem;align-items:center;max-width:32rem;padding:.35rem .35rem .35rem 1.5rem;border-radius:999px;
-  background:rgba(255,255,255,.07);border:1px solid rgba(243,228,198,.28);backdrop-filter:blur(8px);transition:border-color .3s,background .3s;}
-.promo-form:focus-within{border-color:var(--gold);background:rgba(255,255,255,.1);}
-.promo-input{flex:1;min-width:0;padding:.8rem 0;background:transparent;border:0;outline:0;color:#fff;font-family:var(--sans);font-size:.92rem;}
-.promo-input::placeholder{color:rgba(255,255,255,.5);}
-.promo-submit{flex:none;padding:.95rem 1.7rem;border:0;border-radius:999px;cursor:pointer;font-size:.7rem;font-weight:500;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--deep);background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));transition:transform .3s var(--ease),filter .3s;}
-.promo-submit:hover{transform:translateY(-1px);filter:brightness(1.08);}
-.promo-note{min-height:1.4rem;margin-top:.9rem;font-size:.74rem;letter-spacing:.06em;color:rgba(255,255,255,.55);}
-.promo-note.ok{color:var(--gold-hi);}
-.promo-note.err{color:#FFB3C1;}
+.promo-lead{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.72);max-width:31rem;margin-bottom:2.2rem;}
+.promo-note{margin-top:1.4rem;font-size:.8rem;letter-spacing:.08em;color:rgba(255,255,255,.62);}
+.promo-note a{color:var(--champagne);text-decoration:none;border-bottom:1px solid rgba(201,161,91,.5);}
 .promo-right{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(243,228,198,.2);border:1px solid rgba(243,228,198,.2);border-radius:var(--r);overflow:hidden;}
 .pstat{padding:2rem 1.6rem;background:rgba(38,16,28,.78);transition:background .4s;}
 .pstat:hover{background:rgba(94,18,48,.7);}
-.pstat-n{font-family:var(--serif);font-size:clamp(2.4rem,3.6vw,3.2rem);font-weight:500;line-height:1;color:var(--champagne);}
-.pstat-t{margin-top:.6rem;font-size:.66rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.pstat-n{font-family:var(--serif);font-size:clamp(2rem,3.2vw,2.8rem);font-weight:500;line-height:1.05;color:var(--champagne);overflow-wrap:anywhere;}
+.pstat-t{margin-top:.6rem;font-size:.66rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.62);}
 
-/* AVIS */
-.testi{padding:clamp(5rem,9vw,8.5rem) 0;background:var(--soft);}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.testi-card{position:relative;display:flex;flex-direction:column;padding:2.4rem 2.2rem 2rem;background:var(--paper);
-  border:1px solid rgba(201,161,91,.3);border-radius:var(--r);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s;}
-.testi-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 34px 60px -34px rgba(26,10,18,.4);}
-.tq{font-family:var(--serif);font-size:5rem;line-height:.6;height:2.2rem;color:var(--gold);}
-.testi-stars{color:var(--gold);font-size:.85rem;letter-spacing:.14em;margin-bottom:1rem;}
-.testi-text{flex:1;font-family:var(--serif);font-size:1.3rem;font-style:italic;font-weight:500;line-height:1.5;color:var(--ink);margin-bottom:1.8rem;}
-.testi-author{display:flex;align-items:center;gap:.9rem;padding-top:1.4rem;border-top:1px solid var(--line);}
-.testi-av{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--wine),var(--hot));color:var(--champagne);font-family:var(--serif);font-size:1.25rem;font-weight:500;
-  box-shadow:0 0 0 3px var(--paper),0 0 0 4px rgba(201,161,91,.55);}
-.testi-name{font-size:.88rem;font-weight:500;color:var(--deep);}
-.testi-loc{font-size:.72rem;color:var(--muted);}
-.testi-badge{margin-left:auto;display:inline-flex;align-items:center;gap:.35rem;font-size:.6rem;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--gold-ink);}
-.testi-badge .ico{width:14px;height:14px;stroke-width:2;}
+/* MA COMMANDE (panier WhatsApp) */
+.cart-backdrop{position:fixed;inset:0;z-index:600;background:rgba(26,10,18,.55);backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s;}
+.cart-backdrop.open{opacity:1;visibility:visible;transition-delay:0s;}
+.cart-panel{position:fixed;top:0;right:0;bottom:0;z-index:700;width:min(420px,100%);display:flex;flex-direction:column;
+  background:var(--paper);color:var(--ink);box-shadow:-30px 0 60px -30px rgba(0,0,0,.5);
+  transform:translateX(102%);visibility:hidden;transition:transform .5s var(--ease),visibility 0s .5s;}
+.cart-panel.open{transform:none;visibility:visible;transition-delay:0s;}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:1.6rem 1.6rem 1.2rem;border-bottom:1px solid var(--line);}
+.cart-head h2{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--deep);}
+.cart-close{display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:var(--soft);color:var(--deep);cursor:pointer;transition:background .3s,color .3s;}
+.cart-close:hover{background:var(--deep);color:var(--champagne);}
+.cart-list{flex:1;overflow:auto;padding:.4rem 1.6rem;}
+.cart-empty{flex:1;padding:2rem 1.6rem;font-size:.95rem;color:var(--muted);}
+.cart-panel.has-items .cart-empty{display:none;}
+.cart-panel:not(.has-items) .cart-list{display:none;}
+.cart-item{display:flex;align-items:center;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);}
+.cart-item-name{flex:1;font-family:var(--serif);font-size:1.3rem;font-weight:500;line-height:1.2;color:var(--deep);}
+.cart-qty{display:flex;align-items:center;gap:.25rem;}
+.cart-qty button{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:none;font-size:1.1rem;line-height:1;cursor:pointer;transition:background .3s,color .3s;}
+.cart-qty button:hover{background:var(--deep);color:var(--champagne);}
+.cart-qty span{min-width:1.7rem;text-align:center;font-weight:500;}
+.cart-foot{padding:1.4rem 1.6rem 1.8rem;border-top:1px solid var(--line);}
+.cart-note{margin-bottom:1rem;font-size:.82rem;line-height:1.6;color:var(--muted);}
+.cart-foot .btn{width:100%;}
+.cart-foot .btn[aria-disabled=true]{opacity:.4;pointer-events:none;box-shadow:none;}
+html.cart-open{overflow:hidden;}
 
 /* PIED DE PAGE */
 footer{position:relative;background:var(--deep);color:rgba(255,255,255,.6);padding:clamp(4rem,7vw,6rem) 0 2rem;}
@@ -396,11 +395,6 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   .logo small{display:none;}
   .hero-grid{gap:2.5rem;}
   .stat{padding:0 1.4rem;}
-  .trust-in{grid-template-columns:repeat(3,1fr);}
-  .trust-item:nth-child(4){border-left:0;}
-  .trust-item{border-top:1px solid var(--line);}
-  .trust-item:nth-child(-n+3){border-top:0;}
-  .prod-grid{grid-template-columns:repeat(3,1fr);}
   .f1{left:-10%;}
   .f2{right:-5%;}
 }
@@ -432,12 +426,13 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   .tab-bar::-webkit-scrollbar{display:none;}
   .tab-btn{white-space:nowrap;flex:none;}
   .prod-grid{grid-template-columns:repeat(2,1fr);gap:2.4rem 1rem;}
+  .trust-in{grid-template-columns:1fr 1fr;}
+  .cat-card.wide{grid-column:1/-1;}
   .about{grid-template-columns:1fr;}
   .about-img{min-height:420px;}
   .about-img::after{background:linear-gradient(180deg,transparent 60%,var(--deep)),linear-gradient(0deg,rgba(26,10,18,.4),transparent 40%);}
   .about-content{padding:3rem var(--gutter) 4.5rem;}
   .promo-grid{grid-template-columns:1fr;}
-  .testi-grid{grid-template-columns:1fr;max-width:34rem;margin-inline:auto;}
   .f-grid{grid-template-columns:1fr 1fr;gap:2.6rem 1.6rem;}
   .f-grid>div:first-child{grid-column:1/-1;}
   .f-desc{max-width:none;}
@@ -456,25 +451,15 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   .stat{padding:0 1rem;}
   .stat-n{font-size:2.1rem;}
   .stat-l{font-size:.6rem;letter-spacing:.12em;}
-  .trust-in{grid-template-columns:1fr 1fr;}
   .trust-item{justify-content:flex-start;padding:1.2rem .6rem;font-size:.66rem;}
-  .trust-item:nth-child(n){border-left:0;border-top:1px solid var(--line);}
-  .trust-item:nth-child(-n+2){border-top:0;}
-  .trust-item:nth-child(even){border-left:1px solid var(--line);}
-  .trust-item:last-child:nth-child(odd){grid-column:1/-1;}
   .cat-grid{grid-template-columns:1fr;}
   .cat-card{min-height:300px;}
   .cat-card:first-child{min-height:380px;}
   .prod-name{font-size:1.2rem;}
-  .prod-price{font-size:1.15rem;}
-  .prod-meta{flex-wrap:wrap;}
   .about-float{padding:1rem 1.3rem;}
   .af-num{font-size:2.2rem;}
-  .promo-form{flex-direction:column;align-items:stretch;border-radius:22px;padding:.4rem;gap:.3rem;}
-  .promo-input{padding:.85rem 1.1rem;}
-  .promo-submit{width:100%;}
   .pstat{padding:1.5rem 1.1rem;}
-  .testi-card{padding:2rem 1.5rem 1.6rem;}
+  .pstat-n{font-size:1.55rem;}
   .f-bottom{flex-direction:column;align-items:flex-start;}
 }
 /* tactile : « Ajouter » et « favori » toujours visibles (pas de survol) */
@@ -504,18 +489,17 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     <nav class="menu-wrap" aria-label="Navigation principale">
       <ul class="nav-menu">
         <li><a href="#products" data-filter="tissus">Tissus</a></li>
-        <li><a href="#products" data-filter="ongles">Ongles</a></li>
-        <li><a href="#products" data-filter="cils">Cils</a></li>
+        <li><a href="#products" data-filter="ongles">Press-on nails</a></li>
         <li><a href="#about">À propos</a></li>
-        <li><a href="#promo">Offres</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-end">
-      <button class="nav-cart" type="button" aria-label="Panier">
+      <button class="nav-cart" type="button" id="cart-open" aria-label="Ma commande">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
         <span class="cart-dot" id="cart-count" aria-live="polite">0</span>
       </button>
-      <a class="nav-cta" href="#products">Commander</a>
+      <a class="nav-cta" id="nav-cta" href="#products">Commander</a>
     </div>
   </div>
 </header>
@@ -529,18 +513,17 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
       <p class="hero-badge rise d1">Nouvelle collection disponible</p>
       <p class="hero-loc rise d2">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
-        Lomé, Togo — Livraison partout au Togo
+        Adidogomé, Lomé — Commande sur WhatsApp
       </p>
       <h1 class="rise d2">La <em>femme</em><br>qui <span class="gilt">rayonne</span></h1>
-      <p class="hero-sub rise d3">Tissus wax premium, ongles tendance et cils de luxe — BrendaSTYLE habille et sublime chaque femme de Lomé et au-delà.</p>
+      <p class="hero-sub rise d3">Tissus wax et satin, press-on nails tendance — BrendaSTYLE habille et sublime chaque femme de Lomé et au-delà.</p>
       <div class="hero-btns rise d4">
         <a href="#products" class="btn btn-gold">Voir la collection</a>
         <a href="#about" class="btn btn-ghost">Notre histoire</a>
       </div>
       <div class="hero-stats rise d5">
-        <div class="stat"><span class="stat-n">5K+</span><span class="stat-l">Clientes fidèles</span></div>
-        <div class="stat"><span class="stat-n">300+</span><span class="stat-l">Références</span></div>
-        <div class="stat"><span class="stat-n">4.9★</span><span class="stat-l">Note moyenne</span></div>
+        <div class="stat"><span class="stat-n">1&nbsp;100+</span><span class="stat-l">Abonnées sur TikTok</span></div>
+        <div class="stat"><span class="stat-n">Adidogomé</span><span class="stat-l">Lomé, Togo</span></div>
       </div>
     </div>
 
@@ -552,11 +535,11 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
       </div>
       <figure class="float f1">
         <img src="images/web/ongles-gel.jpg" width="800" height="1200" loading="lazy" alt="Ongles en gel noir et écaille">
-        <figcaption>Ongles</figcaption>
+        <figcaption>Press-on</figcaption>
       </figure>
       <figure class="float f2">
-        <img src="images/web/cils-regard.jpg" width="933" height="1400" loading="lazy" alt="Regard maquillé avec cils soignés">
-        <figcaption>Cils</figcaption>
+        <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" style="object-position:50% 30%" alt="Tissus wax colorés">
+        <figcaption>Tissus</figcaption>
       </figure>
       <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
         <defs><path id="seal-path" d="M60 60 m-43 0 a43 43 0 1 1 86 0 a43 43 0 1 1 -86 0"/></defs>
@@ -574,21 +557,17 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 <div class="marquee" aria-hidden="true">
   <div class="mtrack">
     <span>Tissus wax premium</span><span class="gem">✦</span>
-    <span>Ongles gel &amp; acrylique</span><span class="gem">✦</span>
-    <span>Cils naturels &amp; 3D</span><span class="gem">✦</span>
-    <span>Livraison Lomé 24 h</span><span class="gem">✦</span>
-    <span>BrendaSTYLE Lomé</span><span class="gem">✦</span>
-    <span>Qualité garantie</span><span class="gem">✦</span>
-    <span>Tissus kente &amp; ankara</span><span class="gem">✦</span>
-    <span>Paiement Mobile Money</span><span class="gem">✦</span>
+    <span>Press-on nails tendance</span><span class="gem">✦</span>
+    <span>Satin &amp; tissus brodés</span><span class="gem">✦</span>
+    <span>Adidogomé · Lomé</span><span class="gem">✦</span>
+    <span>BrendaSTYLE</span><span class="gem">✦</span>
+    <span>Commande sur WhatsApp</span><span class="gem">✦</span>
     <span>Tissus wax premium</span><span class="gem">✦</span>
-    <span>Ongles gel &amp; acrylique</span><span class="gem">✦</span>
-    <span>Cils naturels &amp; 3D</span><span class="gem">✦</span>
-    <span>Livraison Lomé 24 h</span><span class="gem">✦</span>
-    <span>BrendaSTYLE Lomé</span><span class="gem">✦</span>
-    <span>Qualité garantie</span><span class="gem">✦</span>
-    <span>Tissus kente &amp; ankara</span><span class="gem">✦</span>
-    <span>Paiement Mobile Money</span><span class="gem">✦</span>
+    <span>Press-on nails tendance</span><span class="gem">✦</span>
+    <span>Satin &amp; tissus brodés</span><span class="gem">✦</span>
+    <span>Adidogomé · Lomé</span><span class="gem">✦</span>
+    <span>BrendaSTYLE</span><span class="gem">✦</span>
+    <span>Commande sur WhatsApp</span><span class="gem">✦</span>
   </div>
 </div>
 
@@ -596,24 +575,20 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 <section class="trust" id="reassurance" aria-label="Nos engagements">
   <div class="wrap trust-in">
     <div class="trust-item">
-      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
-      Livraison Lomé 24 h
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+      Adidogomé · Lomé
     </div>
     <div class="trust-item">
-      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg>
-      Paiement Mobile Money
-    </div>
-    <div class="trust-item">
-      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.5M4 4v3.5h3.5"/><path d="M4 13a8 8 0 0 0 14.3 4.5M20 20v-3.5h-3.5"/></svg>
-      Échange facile
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/><path d="M9 12h.01M12 12h.01M15 12h.01"/></svg>
+      Commande sur WhatsApp
     </div>
     <div class="trust-item">
       <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17l.7 1.8 1.8.7-1.8.7L19 22l-.7-1.8-1.8-.7 1.8-.7z"/></svg>
       Qualité sélectionnée
     </div>
     <div class="trust-item">
-      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/><path d="M9 12h.01M12 12h.01M15 12h.01"/></svg>
-      WhatsApp 7j/7
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a3.2 3.2 0 1 1-3.2-3.2"/><path d="M14 4c.3 2.3 1.9 3.8 4.2 4"/></svg>
+      Nouveautés sur TikTok
     </div>
   </div>
 </section>
@@ -623,7 +598,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Nos univers</div>
-      <h2 class="title">Tout pour <em>vous sublimer</em></h2>
+      <h2 class="title">Beauté &amp; <em>matière</em></h2>
     </div>
     <div class="cat-grid">
 
@@ -633,7 +608,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <span class="cat-badge">✦ Tendance</span>
         <span class="cat-in">
           <span class="cat-tag">Nouvelle collection</span>
-          <span class="cat-name">Tissus Wax<br>&amp; Kente</span>
+          <span class="cat-name">Tissus<br>Wax</span>
           <span class="cat-cta">Explorer <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
         </span>
       </a>
@@ -642,39 +617,28 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" alt="Mains aux ongles décorés et bagues">
         <span class="cat-num">02</span>
         <span class="cat-in">
-          <span class="cat-tag">Best-seller</span>
-          <span class="cat-name">Ongles<br>&amp; Manucure</span>
-          <span class="cat-cta">Explorer <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-
-      <a href="#products" data-filter="cils" class="cat-card reveal d2" style="--pos:50% 38%">
-        <img src="images/web/cils-extensions.jpg" width="933" height="1400" loading="lazy" alt="Pose d’extensions de cils">
-        <span class="cat-num">03</span>
-        <span class="cat-badge dark">Top vente</span>
-        <span class="cat-in">
-          <span class="cat-tag">Regard sublime</span>
-          <span class="cat-name">Cils &amp;<br>Extensions</span>
-          <span class="cat-cta">Explorer <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-
-      <a href="#products" data-filter="tissus" class="cat-card reveal d1" style="--pos:50% 50%">
-        <img src="images/web/tissus-satin.jpg" width="1600" height="1195" loading="lazy" alt="Rouleaux de tissu satin bleu, turquoise et blanc">
-        <span class="cat-num">04</span>
-        <span class="cat-in">
-          <span class="cat-tag">Nouveau stock</span>
-          <span class="cat-name">Satin &amp;<br>Dentelle</span>
+          <span class="cat-tag">Beauté</span>
+          <span class="cat-name">Press-on<br>Nails</span>
           <span class="cat-cta">Explorer <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
         </span>
       </a>
 
       <a href="#products" data-filter="ongles" class="cat-card reveal d2" style="--pos:50% 70%">
         <img src="images/web/vernis.jpg" width="933" height="1400" loading="lazy" alt="Flacons de vernis à ongles sur une table claire">
-        <span class="cat-num">05</span>
+        <span class="cat-num">03</span>
         <span class="cat-in">
-          <span class="cat-tag">Beauté</span>
-          <span class="cat-name">Accessoires<br>&amp; Soins</span>
+          <span class="cat-tag">Nail art</span>
+          <span class="cat-name">Vernis &amp;<br>Accessoires</span>
+          <span class="cat-cta">Explorer <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+
+      <a href="#products" data-filter="tissus" class="cat-card wide reveal d1" style="--pos:50% 50%">
+        <img src="images/web/tissus-satin.jpg" width="1600" height="1195" loading="lazy" alt="Rouleaux de tissu satin bleu, turquoise et blanc">
+        <span class="cat-num">04</span>
+        <span class="cat-in">
+          <span class="cat-tag">Tissus fins</span>
+          <span class="cat-name">Satin &amp; tissus brodés</span>
           <span class="cat-cta">Explorer <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
         </span>
       </a>
@@ -683,7 +647,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   </div>
 </section>
 
-<!-- ══ COUPS DE CŒUR ════════════════════════════════════════════ -->
+<!-- ══ SÉLECTION ════════════════════════════════════════════════ -->
 <section class="products" id="products">
   <div class="wrap">
     <div class="prod-header reveal">
@@ -695,11 +659,10 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
     </div>
 
-    <div class="tab-bar reveal" role="group" aria-label="Filtrer les produits">
+    <div class="tab-bar reveal" role="group" aria-label="Filtrer la sélection">
       <button class="tab-btn" type="button" data-tab="all" aria-pressed="true">Tout</button>
       <button class="tab-btn" type="button" data-tab="tissus" aria-pressed="false">Tissus</button>
-      <button class="tab-btn" type="button" data-tab="ongles" aria-pressed="false">Ongles</button>
-      <button class="tab-btn" type="button" data-tab="cils" aria-pressed="false">Cils</button>
+      <button class="tab-btn" type="button" data-tab="ongles" aria-pressed="false">Press-on nails</button>
     </div>
 
     <div class="prod-grid" id="pgrid">
@@ -709,116 +672,80 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
           <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" style="--pos:50% 28%" alt="Wax Ankara Royal, tissus aux motifs colorés">
           <span class="prod-badge dark">Nouveau</span>
           <button class="prod-wish" type="button" aria-label="Ajouter Wax Ankara Royal aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
           <p class="prod-cat">Tissu wax</p>
           <h3 class="prod-name">Wax Ankara Royal</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>(124)</p>
-          <p class="prod-price">5&nbsp;500 FCFA</p>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
 
       <article class="prod-card reveal d1" data-cat="ongles">
         <div class="prod-img">
-          <img src="images/web/ongles-gel.jpg" width="800" height="1200" loading="lazy" alt="Kit gel UV, ongles noirs et écaille">
-          <span class="prod-badge gold">Best-seller</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Kit Gel UV Complet aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
-        </div>
-        <div class="prod-info">
-          <p class="prod-cat">Ongles gel</p>
-          <h3 class="prod-name">Kit Gel UV Complet</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>(89)</p>
-          <p class="prod-price">18&nbsp;000 FCFA <span class="prod-old">22&nbsp;000</span></p>
-        </div>
-      </article>
-
-      <article class="prod-card reveal d2" data-cat="cils">
-        <div class="prod-img">
-          <img src="images/web/cils-extensions.jpg" width="933" height="1400" loading="lazy" style="--pos:50% 38%" alt="Cils naturels 3D en pose">
-          <span class="prod-badge dark">Nouveau</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Cils Naturels 3D aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
-        </div>
-        <div class="prod-info">
-          <p class="prod-cat">Cils 3D</p>
-          <h3 class="prod-name">Cils Naturels 3D</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>(203)</p>
-          <p class="prod-price">3&nbsp;500 FCFA</p>
-        </div>
-      </article>
-
-      <article class="prod-card reveal d3" data-cat="tissus">
-        <div class="prod-img">
-          <img src="images/web/tissus-satin.jpg" width="1600" height="1195" loading="lazy" style="--pos:12% 50%" alt="Satin imprimé, rouleaux turquoise et blancs">
-          <span class="prod-badge hot">−20 %</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Satin Imprimé Fleuri aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
-        </div>
-        <div class="prod-info">
-          <p class="prod-cat">Tissu satin</p>
-          <h3 class="prod-name">Satin Imprimé Fleuri</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="4 étoiles sur 5">★★★★☆</span>(67)</p>
-          <p class="prod-price">4&nbsp;000 FCFA <span class="prod-old">5&nbsp;000</span></p>
-        </div>
-      </article>
-
-      <article class="prod-card reveal" data-cat="ongles">
-        <div class="prod-img">
-          <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" style="--pos:50% 55%" alt="Ongles fleuris colorés">
-          <span class="prod-badge gold">Populaire</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Ongles Fleuris Roses aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
+          <img src="images/web/ongles-gel.jpg" width="800" height="1200" loading="lazy" alt="Press-on nails noirs et écaille">
+          <span class="prod-badge gold">Coup de cœur</span>
+          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Noir &amp; Écaille aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
           <p class="prod-cat">Press-on nails</p>
-          <h3 class="prod-name">Ongles Fleuris Roses</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>(145)</p>
-          <p class="prod-price">2&nbsp;500 FCFA</p>
-        </div>
-      </article>
-
-      <article class="prod-card reveal d1" data-cat="cils">
-        <div class="prod-img">
-          <img src="images/web/cils-regard.jpg" width="933" height="1400" loading="lazy" style="--pos:50% 40%" alt="Cils volume XXL noirs, regard maquillé">
-          <button class="prod-wish" type="button" aria-label="Ajouter Volume XXL Noirs aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
-        </div>
-        <div class="prod-info">
-          <p class="prod-cat">Cils volume</p>
-          <h3 class="prod-name">Volume XXL Noirs</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>(78)</p>
-          <p class="prod-price">4&nbsp;200 FCFA</p>
+          <h3 class="prod-name">Press-on Noir &amp; Écaille</h3>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
 
       <article class="prod-card reveal d2" data-cat="tissus">
         <div class="prod-img">
+          <img src="images/web/tissus-satin.jpg" width="1600" height="1195" loading="lazy" style="--pos:12% 50%" alt="Satin imprimé, rouleaux turquoise et blancs">
+          <button class="prod-wish" type="button" aria-label="Ajouter Satin Imprimé Fleuri aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">Tissu satin</p>
+          <h3 class="prod-name">Satin Imprimé Fleuri</h3>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="prod-card reveal" data-cat="ongles">
+        <div class="prod-img">
+          <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" style="--pos:50% 55%" alt="Press-on nails à motifs colorés">
+          <span class="prod-badge dark">Nouveau</span>
+          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Nail Art aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">Press-on nails</p>
+          <h3 class="prod-name">Press-on Nail Art</h3>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="prod-card reveal d1" data-cat="tissus">
+        <div class="prod-img">
           <img src="images/web/tissus-wax.jpg" width="1125" height="1500" loading="lazy" style="--pos:30% 78%;--z:1.7" alt="Tissu brodé aux reflets dorés">
           <span class="prod-badge dark">Exclusivité</span>
           <button class="prod-wish" type="button" aria-label="Ajouter Broderie Dorée Luxe aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
           <p class="prod-cat">Tissu brodé</p>
           <h3 class="prod-name">Broderie Dorée Luxe</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>(52)</p>
-          <p class="prod-price">8&nbsp;500 FCFA</p>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
 
-      <article class="prod-card reveal d3" data-cat="ongles">
+      <article class="prod-card reveal d2" data-cat="ongles">
         <div class="prod-img">
           <img src="images/web/vernis.jpg" width="933" height="1400" loading="lazy" style="--pos:50% 72%" alt="Vernis à ongles et accessoires nail art">
           <button class="prod-wish" type="button" aria-label="Ajouter Set Strass &amp; Vernis aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
-          <button class="prod-add" type="button">Ajouter au panier</button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
           <p class="prod-cat">Nail art</p>
           <h3 class="prod-name">Set Strass &amp; Vernis</h3>
-          <p class="prod-meta"><span class="prod-stars" role="img" aria-label="4 étoiles sur 5">★★★★☆</span>(93)</p>
-          <p class="prod-price">1&nbsp;800 FCFA</p>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
 
@@ -831,99 +758,43 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   <div class="about-img reveal">
     <img src="images/web/portrait-chaleur.jpg" width="900" height="1350" loading="lazy" alt="Portrait de femme aux tons chauds, yeux fermés">
     <div class="about-float">
-      <div class="af-num">5&nbsp;000+</div>
-      <div class="af-text">Femmes sublimées à Lomé</div>
+      <div class="af-num">1&nbsp;100+</div>
+      <div class="af-text">Abonnées sur TikTok</div>
     </div>
   </div>
   <div class="about-content reveal d2">
     <div class="eyebrow">Notre histoire</div>
     <h2 class="title">Née à <em>Lomé</em>,<br>faite pour toutes</h2>
     <p>BrendaSTYLE est née d’une passion simple : croire que chaque femme mérite d’accéder à des produits de qualité, à des prix justes, sans avoir à se battre.</p>
-    <p>Depuis Lomé, nous sélectionnons les meilleurs tissus wax, les ongles les plus tendance et les cils les plus sublimes — pour que vous rayonniez chaque jour.</p>
+    <p>Depuis Adidogomé, à Lomé, nous sélectionnons les plus beaux tissus wax et satin, et les press-on nails les plus tendance — pour que vous rayonniez chaque jour.</p>
     <blockquote>La beauté d’une femme togolaise ne se cache pas — elle s’expose, elle s’assume, elle brille.</blockquote>
     <div class="about-pills">
-      <span class="pill">Basée à Lomé</span>
+      <span class="pill">Basée à Adidogomé, Lomé</span>
       <span class="pill">Qualité sélectionnée</span>
-      <span class="pill">Livraison rapide</span>
-      <span class="pill">3 univers beauté</span>
+      <span class="pill">Commande sur WhatsApp</span>
+      <span class="pill">Tissus &amp; press-on nails</span>
     </div>
   </div>
 </section>
 
-<!-- ══ OFFRE ════════════════════════════════════════════════════ -->
-<section class="promo" id="promo">
+<!-- ══ COMMANDER ════════════════════════════════════════════════ -->
+<section class="promo" id="contact">
   <div class="wrap promo-grid">
     <div class="reveal">
-      <div class="eyebrow">Offre exclusive</div>
-      <h2 class="title">−15&nbsp;% sur votre<br><em>1<sup style="font-size:.5em">re</sup> commande</em></h2>
-      <p class="promo-lead">Inscrivez-vous et recevez immédiatement votre code promo, ainsi que les dernières tendances BrendaSTYLE directement sur votre téléphone.</p>
-      <form class="promo-form" id="promo-form" novalidate>
-        <label class="sr-only" for="promo-email">Votre adresse e-mail</label>
-        <input class="promo-input" type="email" id="promo-email" placeholder="Votre adresse e-mail…" autocomplete="email" required>
-        <button class="promo-submit" type="submit" id="promo-btn">J’en profite</button>
-      </form>
-      <p class="promo-note" id="promo-note" role="status">Pas de spam · Résiliable à tout moment</p>
+      <div class="eyebrow">Commander</div>
+      <h2 class="title">Une envie, une question ?<br><em>Écrivez-nous</em></h2>
+      <p class="promo-lead">Choisissez vos articles dans la sélection, puis envoyez votre commande sur WhatsApp. Nous vous confirmons le prix et la disponibilité.</p>
+      <div class="hero-btns">
+        <a class="btn btn-gold" id="contact-wa" href="https://wa.me/22893150389" target="_blank" rel="noopener">Commander sur WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.tiktok.com/@brendastyle02" target="_blank" rel="noopener">Suivre sur TikTok</a>
+      </div>
+      <p class="promo-note"><a href="tel:+22893150389">+228 93 15 03 89</a> · Adidogomé, Lomé · @brendastyle02</p>
     </div>
     <div class="promo-right reveal d2">
-      <div class="pstat"><div class="pstat-n">5K+</div><div class="pstat-t">Clientes à Lomé</div></div>
-      <div class="pstat"><div class="pstat-n">300+</div><div class="pstat-t">Références dispo</div></div>
-      <div class="pstat"><div class="pstat-n">24 h</div><div class="pstat-t">Livraison Lomé</div></div>
-      <div class="pstat"><div class="pstat-n">4.9★</div><div class="pstat-t">Avis clientes</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ AVIS ═════════════════════════════════════════════════════ -->
-<section class="testi" id="avis">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Elles nous font confiance</div>
-      <h2 class="title">Ce que disent nos<br><em>clientes de Lomé</em></h2>
-    </div>
-    <div class="testi-grid">
-
-      <figure class="testi-card reveal">
-        <div class="tq" aria-hidden="true">“</div>
-        <div class="testi-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
-        <blockquote class="testi-text">Les tissus wax sont d’une qualité incroyable ! Ma robe de mariage faite avec le wax BrendaSTYLE a fait sensation. Je recommande à toutes mes amies.</blockquote>
-        <figcaption class="testi-author">
-          <div class="testi-av" aria-hidden="true">A</div>
-          <div>
-            <div class="testi-name">Aminata K.</div>
-            <div class="testi-loc">Lomé · Cliente depuis 1 an</div>
-          </div>
-          <div class="testi-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Vérifié</div>
-        </figcaption>
-      </figure>
-
-      <figure class="testi-card reveal d1">
-        <div class="tq" aria-hidden="true">“</div>
-        <div class="testi-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
-        <blockquote class="testi-text">Mes cils ne ressemblent plus aux trucs du marché ! Ceux de BrendaSTYLE sont naturels, ils tiennent longtemps et le rendu est sublime. Brenda est sérieuse.</blockquote>
-        <figcaption class="testi-author">
-          <div class="testi-av" aria-hidden="true">F</div>
-          <div>
-            <div class="testi-name">Fatoumata D.</div>
-            <div class="testi-loc">Lomé · Cliente depuis 8 mois</div>
-          </div>
-          <div class="testi-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Vérifié</div>
-        </figcaption>
-      </figure>
-
-      <figure class="testi-card reveal d2">
-        <div class="tq" aria-hidden="true">“</div>
-        <div class="testi-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
-        <blockquote class="testi-text">Le kit gel ongles est parfait — tout est inclus, les ongles tiennent des semaines. Et la livraison était là le lendemain matin. BrendaSTYLE, c’est la référence à Lomé !</blockquote>
-        <figcaption class="testi-author">
-          <div class="testi-av" aria-hidden="true">R</div>
-          <div>
-            <div class="testi-name">Rokhaya S.</div>
-            <div class="testi-loc">Lomé · Cliente depuis 6 mois</div>
-          </div>
-          <div class="testi-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Vérifié</div>
-        </figcaption>
-      </figure>
-
+      <div class="pstat"><div class="pstat-n">1&nbsp;100+</div><div class="pstat-t">Abonnées TikTok</div></div>
+      <div class="pstat"><div class="pstat-n">Tissus</div><div class="pstat-t">Wax, satin &amp; brodés</div></div>
+      <div class="pstat"><div class="pstat-n">Press-on</div><div class="pstat-t">Nails &amp; nail art</div></div>
+      <div class="pstat"><div class="pstat-n">Adidogomé</div><div class="pstat-t">Lomé, Togo</div></div>
     </div>
   </div>
 </section>
@@ -936,21 +807,18 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     <div class="f-grid">
       <div>
         <a href="#top" class="f-logo" aria-label="BrendaSTYLE, retour en haut">Brenda<span>STYLE</span></a>
-        <p class="f-desc">Votre boutique féminine à Lomé — tissus wax, ongles et cils de qualité pour toutes les femmes qui veulent briller chaque jour.</p>
-        <p class="f-address"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Lomé, Togo · Quartier Agbalépédogan</p>
+        <p class="f-desc">Votre boutique féminine à Lomé — tissus wax, satin et press-on nails de qualité pour toutes les femmes qui veulent briller chaque jour.</p>
+        <p class="f-address"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Adidogomé, Lomé · Togo</p>
         <div class="f-socials">
-          <a class="fsoc" href="#" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2.2 2.3 4.2 4.5 4.5l1.2-1.2-1.7-1-.8.6a3 3 0 0 1-1.6-1.6l.6-.8-1-1.7z"/></svg></a>
-          <a class="fsoc" href="#" aria-label="TikTok"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a3.2 3.2 0 1 1-3.2-3.2"/><path d="M14 4c.3 2.3 1.9 3.8 4.2 4"/></svg></a>
-          <a class="fsoc" href="#" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
-          <a class="fsoc" href="#" aria-label="Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h2.5V4.5H14a3.5 3.5 0 0 0-3.5 3.5v2H8v3.5h2.5V20H14v-6.5h2.5L17 10h-3V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a class="fsoc" href="https://wa.me/22893150389" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2.2 2.3 4.2 4.5 4.5l1.2-1.2-1.7-1-.8.6a3 3 0 0 1-1.6-1.6l.6-.8-1-1.7z"/></svg></a>
+          <a class="fsoc" href="https://www.tiktok.com/@brendastyle02" target="_blank" rel="noopener" aria-label="TikTok @brendastyle02"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a3.2 3.2 0 1 1-3.2-3.2"/><path d="M14 4c.3 2.3 1.9 3.8 4.2 4"/></svg></a>
         </div>
       </div>
       <div class="f-col">
         <h4>Boutique</h4>
         <ul>
           <li><a href="#products" data-filter="tissus">Tissus wax &amp; satin</a></li>
-          <li><a href="#products" data-filter="ongles">Ongles &amp; gel</a></li>
-          <li><a href="#products" data-filter="cils">Cils &amp; extensions</a></li>
+          <li><a href="#products" data-filter="ongles">Press-on nails</a></li>
           <li><a href="#products" data-filter="all">Toute la sélection</a></li>
         </ul>
       </div>
@@ -958,17 +826,16 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <h4>BrendaSTYLE</h4>
         <ul>
           <li><a href="#about">Notre histoire</a></li>
-          <li><a href="#avis">Avis clientes</a></li>
-          <li><a href="#promo">Offre −15 %</a></li>
+          <li><a href="#contact">Commander</a></li>
+          <li><a href="https://www.tiktok.com/@brendastyle02" target="_blank" rel="noopener">TikTok</a></li>
         </ul>
       </div>
       <div class="f-col">
-        <h4>Aide</h4>
+        <h4>Contact</h4>
         <ul>
-          <li><a href="#reassurance">Livraison Lomé 24 h</a></li>
-          <li><a href="#reassurance">Échanges faciles</a></li>
-          <li><a href="#reassurance">Paiement Mobile Money</a></li>
-          <li><a href="#reassurance">WhatsApp 7j/7</a></li>
+          <li><a href="https://wa.me/22893150389" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:+22893150389">+228 93 15 03 89</a></li>
+          <li><a href="#contact">Adidogomé, Lomé</a></li>
         </ul>
       </div>
     </div>
@@ -979,13 +846,29 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   </div>
 </footer>
 
+<div class="cart-backdrop" id="cart-backdrop"></div>
+<aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+  <div class="cart-head">
+    <h2 id="cart-title">Ma commande</h2>
+    <button class="cart-close" type="button" id="cart-close" aria-label="Fermer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <ul class="cart-list" id="cart-list"></ul>
+  <p class="cart-empty" id="cart-empty">Votre commande est vide. Ajoutez des articles depuis la sélection.</p>
+  <div class="cart-foot">
+    <p class="cart-note">Votre commande s’envoie sur WhatsApp. Nous vous confirmons le prix et la disponibilité.</p>
+    <a class="btn btn-gold" id="cart-send" href="https://wa.me/22893150389" target="_blank" rel="noopener" aria-disabled="true">Envoyer sur WhatsApp</a>
+  </div>
+</aside>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
+  var WA='22893150389';
   var $=function(s,r){return (r||document).querySelector(s);};
   var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function wa(text){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(text);}
 
   /* année du pied de page */
   $('#year').textContent=new Date().getFullYear();
@@ -1023,7 +906,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     items.forEach(function(el){io.observe(el);});
   }else{items.forEach(function(el){el.classList.add('vis');});}
 
-  /* filtre des produits */
+  /* filtre de la sélection */
   var tabs=$$('.tab-btn'),cards=$$('.prod-card');
   function setFilter(cat){
     tabs.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.tab===cat));});
@@ -1041,42 +924,83 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     tt=setTimeout(function(){toast.classList.remove('show');},2600);
   }
 
-  /* panier */
-  var count=0,dotEl=$('#cart-count');
+  /* prix : un message WhatsApp prérempli par article */
+  $$('.prod-card').forEach(function(c){
+    var name=$('.prod-name',c).textContent;
+    $('.prod-ask',c).href=wa('Bonjour BrendaSTYLE, quel est le prix de « '+name+' » ? Merci !');
+  });
+  $('#contact-wa').href=wa('Bonjour BrendaSTYLE, je souhaite passer commande.');
+
+  /* ma commande (panier envoyé sur WhatsApp) */
+  var order={},names=[];
+  var panel=$('#cart-panel'),backdrop=$('#cart-backdrop'),list=$('#cart-list'),sendBtn=$('#cart-send'),countEl=$('#cart-count');
+  var lastFocus=null;
+  function total(){return names.reduce(function(s,n){return s+order[n];},0);}
+  function render(){
+    list.innerHTML='';
+    names.forEach(function(n){
+      var li=document.createElement('li');li.className='cart-item';
+      var nm=document.createElement('span');nm.className='cart-item-name';nm.textContent=n;
+      var q=document.createElement('div');q.className='cart-qty';
+      var minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','Retirer un '+n);
+      var val=document.createElement('span');val.textContent=order[n];
+      var plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','Ajouter un '+n);
+      minus.addEventListener('click',function(){change(n,-1);});
+      plus.addEventListener('click',function(){change(n,1);});
+      q.appendChild(minus);q.appendChild(val);q.appendChild(plus);
+      li.appendChild(nm);li.appendChild(q);list.appendChild(li);
+    });
+    var t=total();
+    countEl.textContent=t;
+    panel.classList.toggle('has-items',t>0);
+    if(t>0){
+      var lines=names.map(function(n){return '- '+n+' × '+order[n];}).join('\n');
+      sendBtn.href=wa('Bonjour BrendaSTYLE, je souhaite commander :\n'+lines+'\nPouvez-vous me confirmer les prix et la disponibilité ? Merci !');
+      sendBtn.setAttribute('aria-disabled','false');
+    }else{
+      sendBtn.href='https://wa.me/'+WA;
+      sendBtn.setAttribute('aria-disabled','true');
+    }
+  }
+  function change(n,d){
+    order[n]=(order[n]||0)+d;
+    if(order[n]<=0){delete order[n];names=names.filter(function(x){return x!==n;});}
+    else if(names.indexOf(n)<0){names.push(n);}
+    render();
+  }
+  function openCart(){
+    lastFocus=document.activeElement;
+    panel.classList.add('open');backdrop.classList.add('open');panel.setAttribute('aria-hidden','false');
+    document.documentElement.classList.add('cart-open');$('#cart-close').focus();
+  }
+  function closeCart(){
+    panel.classList.remove('open');backdrop.classList.remove('open');panel.setAttribute('aria-hidden','true');
+    document.documentElement.classList.remove('cart-open');
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+  $('#cart-open').addEventListener('click',openCart);
+  $('#cart-close').addEventListener('click',closeCart);
+  backdrop.addEventListener('click',closeCart);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('open'))closeCart();});
+  $('#nav-cta').addEventListener('click',function(e){if(total()>0){e.preventDefault();openCart();}});
+
   $$('.prod-add').forEach(function(btn){
     btn.addEventListener('click',function(){
-      count++;dotEl.textContent=count;
-      dotEl.classList.remove('bump');void dotEl.offsetWidth;dotEl.classList.add('bump');
       var name=$('.prod-name',btn.closest('.prod-card')).textContent;
-      say(name+' ajouté au panier');
+      change(name,1);
+      countEl.classList.remove('bump');void countEl.offsetWidth;countEl.classList.add('bump');
+      say(name+' ajouté à votre commande');
     });
   });
 
   /* favoris */
   $$('.prod-wish').forEach(function(btn){
     btn.addEventListener('click',function(){
-      var on=btn.getAttribute('aria-pressed')!=='true';
-      btn.setAttribute('aria-pressed',String(on));
+      btn.setAttribute('aria-pressed',String(btn.getAttribute('aria-pressed')!=='true'));
     });
   });
 
-  /* offre : inscription */
-  var form=$('#promo-form'),email=$('#promo-email'),note=$('#promo-note'),submit=$('#promo-btn');
-  var noteDefault=note.textContent;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var v=email.value.trim();
-    note.className='promo-note';
-    if(v.indexOf('@')<1||v.lastIndexOf('.')<v.indexOf('@')+2){
-      note.textContent='Merci d’indiquer une adresse e-mail valide.';note.classList.add('err');email.focus();
-      setTimeout(function(){note.className='promo-note';note.textContent=noteDefault;},3200);
-      return;
-    }
-    submit.textContent='Code envoyé';
-    note.textContent='Merci ! Votre code promo arrive.';note.classList.add('ok');
-    email.value='';
-    setTimeout(function(){submit.textContent='J’en profite';note.className='promo-note';note.textContent=noteDefault;},4000);
-  });
+  render();
 })();
 </script>
 </body>
