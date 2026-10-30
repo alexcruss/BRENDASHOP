@@ -20,7 +20,7 @@ Site statique, un seul `index.html` (CSS et JS en ligne), responsive, hébergé 
 
 ## Crédits photo
 
-Portraits de Brenda (accueil et « Notre histoire ») : photos fournies par Brenda.
+Portraits de Brenda (accueil et « Notre histoire ») : photos fournies par Brenda. Photos de press-on nails et de tissus rayés : fournies pour le site.
 
 Autres photos [Unsplash](https://unsplash.com/) (licence Unsplash, usage commercial permis) :
 

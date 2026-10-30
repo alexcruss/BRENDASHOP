@@ -126,6 +126,11 @@ h2.title em{font-style:italic;font-weight:400;color:var(--hot);}
   transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
 .nav-menu a:hover{color:var(--fg);}
 .nav-menu a:hover::after{transform:scaleX(1);}
+.nav-menu a.active{color:var(--fg);}
+.nav-menu a.active::after{transform:scaleX(1);}
+.nav-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:linear-gradient(90deg,var(--gold-lo),var(--gold-hi));transform:scaleX(var(--p,0));transform-origin:left;}
+.site-nav.stuck .nav-progress{opacity:1;}
 .nav-end{display:flex;align-items:center;gap:1.4rem;}
 .nav-cart{position:relative;display:grid;place-items:center;width:44px;height:44px;background:none;border:0;
   color:var(--fg);cursor:pointer;transition:color .4s,transform .3s var(--ease);}
@@ -407,7 +412,9 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   .site-nav .logo span{color:var(--hot);}
   .nav-in{flex-wrap:wrap;gap:.2rem 1rem;}
   .logo{font-size:1.6rem;}
-  nav.menu-wrap{order:3;width:100%;}
+  html{scroll-padding-top:7rem;}
+  nav.menu-wrap{order:3;width:100%;max-height:60px;transition:max-height .4s var(--ease),opacity .3s,visibility 0s;}
+  .site-nav.compact nav.menu-wrap{max-height:0;opacity:0;visibility:hidden;overflow:hidden;transition:max-height .4s var(--ease),opacity .3s,visibility 0s .4s;}
   .nav-menu{gap:1.5rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-bottom:.2rem;}
   .nav-menu::-webkit-scrollbar{display:none;}
   .nav-menu li{flex:none;}
@@ -486,6 +493,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 
 <!-- ══ NAVIGATION ═══════════════════════════════════════════════ -->
 <header class="site-nav" id="nav">
+  <div class="nav-progress" aria-hidden="true"></div>
   <div class="wrap nav-in">
     <a href="#top" class="logo" aria-label="BrendaSTYLE, retour en haut">Brenda<span>STYLE</span><small>Lomé</small></a>
     <nav class="menu-wrap" aria-label="Navigation principale">
@@ -536,7 +544,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
              alt="Brenda, en robe noire satinée, la main près du visage">
       </div>
       <figure class="float f1">
-        <img src="images/web/ongles-art.jpg" width="844" height="1500" loading="lazy" alt="Mains aux ongles décorés et bagues">
+        <img src="images/web/ongles-amande.jpg" width="962" height="1280" loading="lazy" style="object-position:50% 40%" alt="Main aux ongles amande décorés">
         <figcaption>Press-on</figcaption>
       </figure>
       <figure class="float f2">
@@ -615,8 +623,8 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         </span>
       </a>
 
-      <a href="#products" data-filter="ongles" class="cat-card reveal d1" style="--pos:50% 28%">
-        <img src="images/web/ongles-visage.jpg" width="999" height="1500" loading="lazy" alt="Portrait d’une femme à la peau noire, mains aux ongles rouges">
+      <a href="#products" data-filter="ongles" class="cat-card reveal d1" style="--pos:50% 42%">
+        <img src="images/web/ongles-french.jpg" width="832" height="1216" loading="lazy" alt="Mains aux ongles French noirs, entourées de pinceaux et de fleurs">
         <span class="cat-num">02</span>
         <span class="cat-in">
           <span class="cat-tag">Beauté</span>
@@ -625,8 +633,8 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         </span>
       </a>
 
-      <a href="#products" data-filter="ongles" class="cat-card reveal d2" style="--pos:50% 70%">
-        <img src="images/web/vernis.jpg" width="933" height="1400" loading="lazy" alt="Flacons de vernis à ongles sur une table claire">
+      <a href="#products" data-filter="ongles" class="cat-card reveal d2" style="--pos:50% 55%">
+        <img src="images/web/ongles-salon.jpg" width="1024" height="1024" loading="lazy" alt="Pose de vernis rose sur des ongles, entre deux mains">
         <span class="cat-num">03</span>
         <span class="cat-in">
           <span class="cat-tag">Nail art</span>
@@ -685,14 +693,14 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
 
       <article class="prod-card reveal d1" data-cat="ongles">
         <div class="prod-img">
-          <img src="images/web/ongles-visage.jpg" width="999" height="1500" loading="lazy" style="--pos:50% 35%" alt="Press-on nails rouges sur peau noire">
+          <img src="images/web/ongles-amande.jpg" width="962" height="1280" loading="lazy" style="--pos:50% 35%" alt="Press-on nails amande nude, avec fleur et strass dorés, sur une main à la peau noire">
           <span class="prod-badge gold">Coup de cœur</span>
-          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Rouge Glossy aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Amande Nude aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
           <button class="prod-add" type="button">Ajouter à ma commande</button>
         </div>
         <div class="prod-info">
           <p class="prod-cat">Press-on nails</p>
-          <h3 class="prod-name">Press-on Rouge Glossy</h3>
+          <h3 class="prod-name">Press-on Amande Nude</h3>
           <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
@@ -706,6 +714,46 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
         <div class="prod-info">
           <p class="prod-cat">Tissu satin</p>
           <h3 class="prod-name">Satin Imprimé Fleuri</h3>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="prod-card reveal" data-cat="ongles">
+        <div class="prod-img">
+          <img src="images/web/ongles-visage.jpg" width="999" height="1500" loading="lazy" style="--pos:50% 35%" alt="Press-on nails rouges sur peau noire">
+          <button class="prod-wish" type="button" aria-label="Ajouter Press-on Rouge Glossy aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">Press-on nails</p>
+          <h3 class="prod-name">Press-on Rouge Glossy</h3>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="prod-card reveal d1" data-cat="tissus">
+        <div class="prod-img">
+          <img src="images/web/tissus-rayes.jpg" width="720" height="1280" loading="lazy" style="--pos:50% 40%" alt="Pile de tissus rayés, vichy et à carreaux, rangés sur une étagère">
+          <span class="prod-badge dark">Nouveau</span>
+          <button class="prod-wish" type="button" aria-label="Ajouter Tissus Rayés &amp; Vichy aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">Tissus rayés</p>
+          <h3 class="prod-name">Tissus Rayés &amp; Vichy</h3>
+          <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="prod-card reveal d2" data-cat="ongles">
+        <div class="prod-img">
+          <img src="images/web/ongles-french.jpg" width="832" height="1216" loading="lazy" style="--pos:50% 42%" alt="Mains aux ongles French noirs sur un tissu satin pêche, entourées de pinceaux et de fleurs">
+          <button class="prod-wish" type="button" aria-label="Ajouter Press-on French Noir aux favoris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+          <button class="prod-add" type="button">Ajouter à ma commande</button>
+        </div>
+        <div class="prod-info">
+          <p class="prod-cat">Press-on nails</p>
+          <h3 class="prod-name">Press-on French Noir</h3>
           <a class="prod-ask" href="https://wa.me/22893150389" target="_blank" rel="noopener">Demander le prix <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
         </div>
       </article>
@@ -895,10 +943,42 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
     });
   }
 
-  /* barre de navigation */
-  var nav=$('#nav');
-  function onScroll(){nav.classList.toggle('stuck',window.scrollY>60);}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* barre de navigation : fond au défilement, progression, section active, repli sur mobile */
+  var nav=$('#nav'),menu=$('.nav-menu'),menuLinks=$$('.nav-menu a'),currentFilter='all',lastY=0,activeLink=null;
+  var mobileMQ=window.matchMedia('(max-width:900px)');
+  var spyTargets=[{id:'about',sel:'a[href="#about"]'},{id:'contact',sel:'a[href="#contact"]'},{id:'products'}];
+  function linkFor(t){
+    if(t.id==='products')return currentFilter==='all'?null:$('.nav-menu a[data-filter="'+currentFilter+'"]');
+    return $('.nav-menu '+t.sel);
+  }
+  function centerLink(a){
+    if(menu.scrollWidth<=menu.clientWidth)return;
+    var r=a.getBoundingClientRect(),m=menu.getBoundingClientRect();
+    menu.scrollTo({left:menu.scrollLeft+(r.left-m.left)-(m.width-r.width)/2,behavior:reduce?'auto':'smooth'});
+  }
+  function spy(){
+    var probe=window.innerHeight*.35,hit=null;
+    spyTargets.forEach(function(t){
+      var r=document.getElementById(t.id).getBoundingClientRect();
+      if(r.top<=probe&&r.bottom>probe)hit=linkFor(t);
+    });
+    if(hit===activeLink)return;
+    menuLinks.forEach(function(a){a.classList.remove('active');a.removeAttribute('aria-current');});
+    activeLink=hit;
+    if(hit){hit.classList.add('active');hit.setAttribute('aria-current','true');centerLink(hit);}
+  }
+  function onScroll(){
+    var y=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
+    nav.classList.toggle('stuck',y>60);
+    nav.style.setProperty('--p',max>0?Math.min(1,y/max):0);
+    if(mobileMQ.matches){
+      if(y<160||y<lastY-6)nav.classList.remove('compact');
+      else if(y>lastY+6)nav.classList.add('compact');
+    }else nav.classList.remove('compact');
+    lastY=y;spy();
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);onScroll();
 
   /* apparition au défilement */
   var items=$$('.reveal');
@@ -914,6 +994,7 @@ footer::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;back
   function setFilter(cat){
     tabs.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.tab===cat));});
     cards.forEach(function(c){c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});
+    currentFilter=cat;spy();
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){setFilter(b.dataset.tab);});});
   $$('[data-filter]').forEach(function(a){a.addEventListener('click',function(){setFilter(a.dataset.filter);});});
